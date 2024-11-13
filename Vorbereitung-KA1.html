@@ -291,30 +291,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="liste-der-bücher-die-in-der-kategorie-romantik-sind-und-nach-dem-1.-januar-2024-veröffentlicht-wurden" class="level3">
-<h3 class="anchored" data-anchor-id="liste-der-bücher-die-in-der-kategorie-romantik-sind-und-nach-dem-1.-januar-2024-veröffentlicht-wurden">16. Liste der Bücher, die in der Kategorie ‘Romantik’ sind und nach dem 1. Januar 2024 veröffentlicht wurden</h3>
+<section id="liste-der-bücher-die-von-autoren-geschrieben-wurden-die-nach-1990-geboren-wurden" class="level3">
+<h3 class="anchored" data-anchor-id="liste-der-bücher-die-von-autoren-geschrieben-wurden-die-nach-1990-geboren-wurden">16. Liste der Bücher, die von Autoren geschrieben wurden, die nach 1990 geboren wurden</h3>
 <div id="cell-36" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>FROM Bücher, Kategorien </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>WHERE Bücher.KategorieID <span class="op">=</span> Kategorien.KategorieID </span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>AND Kategorien.Bezeichnung <span class="op">=</span> <span class="st">'Romantik'</span> </span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>AND Bücher.BuchID <span class="op">&gt;</span> <span class="dv">10</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="liste-der-bücher-die-von-autoren-geschrieben-wurden-die-nach-1990-geboren-wurden" class="level3">
-<h3 class="anchored" data-anchor-id="liste-der-bücher-die-von-autoren-geschrieben-wurden-die-nach-1990-geboren-wurden">17. Liste der Bücher, die von Autoren geschrieben wurden, die nach 1990 geboren wurden</h3>
-<div id="cell-38" class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel </span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>FROM Bücher, Autoren </span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>WHERE Bücher.AutorID <span class="op">=</span> Autoren.AutorID </span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>AND Autoren.Geburtsjahr <span class="op">&gt;</span> <span class="dv">1990</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>FROM Bücher, Autoren </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>WHERE Bücher.AutorID <span class="op">=</span> Autoren.AutorID </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>AND Autoren.Geburtsjahr <span class="op">&gt;</span> <span class="dv">1990</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
