@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/home/mwslinux/NC-Hetzner-privat/Documents/sammelstelle/jupyter-Notes/inf-j1-SJ2425/KA1/fluggesellschaft" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1763"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,11:mainSitzplaetze"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Buchungen" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="138"/><column index="2" value="76"/><column index="3" value="145"/><column index="4" value="97"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Buchungspositionen" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="159"/><column index="2" value="138"/><column index="3" value="84"/><column index="4" value="45"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Fluege" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="98"/><column index="2" value="77"/><column index="3" value="77"/><column index="4" value="145"/><column index="5" value="145"/><column index="6" value="87"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Flugzeuge" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="87"/><column index="2" value="174"/><column index="3" value="134"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Kunden" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="76"/><column index="2" value="70"/><column index="3" value="89"/><column index="4" value="224"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Sitzplaetze" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="84"/><column index="2" value="98"/><column index="3" value="130"/><column index="4" value="78"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">-- Erstellen der Tabelle Flugzeuge
+CREATE TABLE Flugzeuge (
+    FlugzeugID INTEGER PRIMARY KEY,
+    Registrierungsnummer TEXT NOT NULL,
+    Flugzeugtyp TEXT NOT NULL
+);
+
+-- Erstellen der Tabelle Flüge
+CREATE TABLE Fluege (
+    Flugnummer INTEGER PRIMARY KEY,
+    Abflugort TEXT NOT NULL,
+    Zielort TEXT NOT NULL,
+    Abflugzeit DATETIME NOT NULL,
+    Ankunftszeit DATETIME NOT NULL,
+    FlugzeugID INTEGER,
+    FOREIGN KEY (FlugzeugID) REFERENCES Flugzeuge(FlugzeugID)
+);
+
+-- Erstellen der Tabelle Sitzplätze
+CREATE TABLE Sitzplaetze (
+    SitzplatzID INTEGER PRIMARY KEY,
+    Flugnummer INTEGER,
+    Sitzplatznummer TEXT NOT NULL,
+    Sitzklasse TEXT NOT NULL,
+    FOREIGN KEY (Flugnummer) REFERENCES Fluege(Flugnummer)
+);
+
+-- Erstellen der Tabelle Kunden
+CREATE TABLE Kunden (
+    KundenID INTEGER PRIMARY KEY,
+    Vorname TEXT NOT NULL,
+    Nachname TEXT NOT NULL,
+    Email TEXT NOT NULL
+);
+
+-- Erstellen der Tabelle Buchungen
+CREATE TABLE Buchungen (
+    Buchungsnummer INTEGER PRIMARY KEY,
+    KundenID INTEGER,
+    Buchungsdatum DATETIME NOT NULL,
+    Gesamtpreis REAL NOT NULL,
+    FOREIGN KEY (KundenID) REFERENCES Kunden(KundenID)
+);
+
+-- Erstellen der Tabelle Buchungspositionen
+CREATE TABLE Buchungspositionen (
+    BuchungspositionsID INTEGER PRIMARY KEY,
+    Buchungsnummer INTEGER,
+    SitzplatzID INTEGER,
+    Preis REAL NOT NULL,
+    FOREIGN KEY (Buchungsnummer) REFERENCES Buchungen(Buchungsnummer),
+    FOREIGN KEY (SitzplatzID) REFERENCES Sitzplaetze(SitzplatzID)
+);
+</sql><sql name="SQL 2">-- Einfügen von Flugzeugen
+INSERT INTO Flugzeuge (Registrierungsnummer, Flugzeugtyp) VALUES
+('D-ABCD', 'Airbus A320'),
+('D-EFGH', 'Boeing 737'),
+('D-IJKL', 'Airbus A330'),
+('D-MNOP', 'Boeing 747'),
+('D-QRST', 'Airbus A350'),
+('D-UVWX', 'Boeing 777'),
+('D-YZAB', 'Embraer E190'),
+('D-CDEF', 'Bombardier CRJ900'),
+('D-GHIJ', 'Airbus A321'),
+('D-JKLM', 'Boeing 757');
+
+-- Einfügen von Flügen
+INSERT INTO Fluege (Flugnummer, Abflugort, Zielort, Abflugzeit, Ankunftszeit, FlugzeugID) VALUES
+(1001, 'Berlin', 'München', '2024-01-01 08:00:00', '2024-01-01 09:30:00', 1),
+(1002, 'Hamburg', 'Frankfurt', '2024-01-01 10:00:00', '2024-01-01 11:30:00', 2),
+(1003, 'München', 'Berlin', '2024-01-01 12:00:00', '2024-01-01 13:30:00', 1),
+(1004, 'Frankfurt', 'Hamburg', '2024-01-01 14:00:00', '2024-01-01 15:30:00', 2),
+(1005, 'Berlin', 'Düsseldorf', '2024-01-01 16:00:00', '2024-01-01 17:00:00', 3),
+(1006, 'Düsseldorf', 'Berlin', '2024-01-01 18:00:00', '2024-01-01 19:00:00', 3),
+(1007, 'Berlin', 'Stuttgart', '2024-01-01 20:00:00', '2024-01-01 21:30:00', 4),
+(1008, 'Stuttgart', 'Berlin', '2024-01-01 22:00:00', '2024-01-01 23:30:00', 4),
+(1009, 'Hamburg', 'München', '2024-01-02 08:00:00', '2024-01-02 09:30:00', 5),
+(1010, 'München', 'Hamburg', '2024-01-02 10:00:00', '2024-01-02 11:30:00', 5);
+
+-- Einfügen von Sitzplätzen
+INSERT INTO Sitzplaetze (Flugnummer, Sitzplatznummer, Sitzklasse) VALUES
+(1001, '1A', 'Business'),
+(1001, '1B', 'Business'),
+(1001, '2A', 'Economy'),
+(1001, '2B', 'Economy'),
+(1001, '3A', 'Economy'),
+(1002, '1A', 'Business'),
+(1002, '1B', 'Business'),
+(1002, '2A', 'Economy'),
+(1002, '2B', 'Economy'),
+(1003, '1A', 'Business'),
+(1003, '1B', 'Business'),
+(1003, '2A', 'Economy'),
+(1003, '2B', 'Economy'),
+(1004, '1A', 'Business'),
+(1004, '1B', 'Business'),
+(1004, '2A', 'Economy'),
+(1004, '2B', 'Economy'),
+(1005, '1A', 'Business'),
+(1005, '1B', 'Business'),
+(1005, '2A', 'Economy');
+
+-- Einfügen von Kunden
+INSERT INTO Kunden (Vorname, Nachname, Email) VALUES
+('Max', 'Mustermann', 'max.mustermann@example.com'),
+('Erika', 'Musterfrau', 'erika.musterfrau@example.com'),
+('Hans', 'Müller', 'hans.mueller@example.com'),
+('Anna', 'Schmidt', 'anna.schmidt@example.com'),
+('Peter', 'Meier', 'peter.meier@example.com'),
+('Laura', 'Schneider', 'laura.schneider@example.com'),
+('Tom', 'Fischer', 'tom.fischer@example.com'),
+('Julia', 'Weber', 'julia.weber@example.com'),
+('Lukas', 'Hoffmann', 'lukas.hoffmann@example.com'),
+('Sophie', 'Klein', 'sophie.klein@example.com');
+
+-- Einfügen von Buchungen
+INSERT INTO Buchungen (KundenID, Buchungsdatum, Gesamtpreis) VALUES
+(1, '2024-01-01 07:00:00', 250.00),
+(1, '2024-01-02 09:00:00', 300.00),
+(2, '2024-01-01 09:00:00', 150.00),
+(2, '2024-01-02 10:00:00', 200.00),
+(3, '2024-01-01 11:00:00', 180.00),
+(3, '2024-01-03 12:00:00', 220.00),
+(4, '2024-01-01 13:00:00', 210.00),
+(5, '2024-01-02 14:00:00', 230.00),
+(6, '2024-01-02 15:00:00', 240.00),
+(7, '2024-01-03 16:00:00', 260.00);
+
+-- Einfügen von Buchungspositionen
+INSERT INTO Buchungspositionen (Buchungsnummer, SitzplatzID, Preis) VALUES
+(1, 1, 125.00),
+(1, 2, 125.00),
+(2, 3, 150.00),
+(2, 4, 150.00),
+(3, 5, 75.00),
+(3, 6, 75.00),
+(4, 7, 100.00),
+(5, 8, 115.00),
+(6, 9, 120.00),
+(7, 10, 130.00),
+(8, 11, 105.00),
+(9, 12, 115.00),
+(10, 13, 120.00);
+</sql><current_tab id="1"/></tab_sql></sqlb_project>
