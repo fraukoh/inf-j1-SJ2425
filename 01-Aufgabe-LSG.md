@@ -2,8 +2,9 @@
 
 
 Schreiben Sie ein Python-Programm, das Ihre persönlichen Daten auf dem
-Bildschirm ausgibt. \### Problemanalyse: So soll die Bildschirmausgabe
-des Programms aussehen (Beispiel):
+Bildschirm ausgibt.
+
+So soll die Bildschirmausgabe des Programms aussehen (Beispiel):
 
     Meine Daten:  
     Nachname: Müller  
@@ -27,3 +28,9 @@ print("Vorname: Karin")
 print("Straße: Karlstr. 17")
 print("Stadt: 78166 Donaueschingen")
 ```
+
+    Meine Daten:
+    Nachname: Müller
+    Vorname: Karin
+    Straße: Karlstr. 17
+    Stadt: 78166 Donaueschingen
