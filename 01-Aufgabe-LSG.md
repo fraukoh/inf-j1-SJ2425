@@ -16,7 +16,7 @@ So soll die Bildschirmausgabe des Programms aussehen (Beispiel):
 
 Zeichnen Sie ein Struktogramm zu dem Programm.
 
-[Struktogramm](01_Ausgabe_von_Zeichen_mit_print_files/figure-html/cell-4-1-88e9191a-25f7-49a5-94ed-22e2837703ae.png)
+[Struktogramm](01-Aufgabe-LSG_files/figure-html/cell-1-1-63f9b2eb-9f5d-437f-bc49-a2268d1dcc65.png)
 
 ### Programmcode (Python-Code)
 
