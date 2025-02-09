@@ -36,3 +36,23 @@ jupyter-Server hoch und bearbeiten Sie es.
 [Arbeitsblatt](01_Ausgabe_von_Zeichen_mit_print.html)
 
 [Übungsblatt](01-Aufgabe-LSG.html)
+
+### Variablen als Zeichenkette
+
+[Arbeitsblatt](02_Variablen_Zeichenkette.html)
+
+### Variablen als Zahl
+
+[Arbeitsblatt](03_Variable_als_Zahl.html)
+
+### Variablen als Wahrheitswert
+
+[Arbeitsblatt](04_Variable_als_Wahrheitswert.html)
+
+[Übungsblatt](04-Variablen-Aufgabe-LSG.html)
+
+### Rechenoperatoren
+
+[Arbeitsblatt](05_Rechenoperatoren.html)
+
+[Übungsblatt](05-Rechenoperatoren-Aufgabe-LSG.html)

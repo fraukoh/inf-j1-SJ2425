@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Unterrichtsmaterial zum Informatikkurs J1 im SJ2425</title>
+<title>Variable als Zeichenkette</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,19 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="02_Variablen_Zeichenkette_files/libs/clipboard/clipboard.min.js"></script>
+<script src="02_Variablen_Zeichenkette_files/libs/quarto-html/quarto.js"></script>
+<script src="02_Variablen_Zeichenkette_files/libs/quarto-html/popper.min.js"></script>
+<script src="02_Variablen_Zeichenkette_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="02_Variablen_Zeichenkette_files/libs/quarto-html/anchor.min.js"></script>
+<link href="02_Variablen_Zeichenkette_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="02_Variablen_Zeichenkette_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="02_Variablen_Zeichenkette_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="02_Variablen_Zeichenkette_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="02_Variablen_Zeichenkette_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -45,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Unterrichtsmaterial zum Informatikkurs J1 im SJ2425</h1>
+<h1 class="title">Variable als Zeichenkette</h1>
 </div>
 
 
@@ -62,45 +96,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="datenbanken" class="level2">
-<h2 class="anchored" data-anchor-id="datenbanken">Datenbanken</h2>
-<p>Im Unterricht wird <a href="https://sql.hauptquartier.eu/">folgendes Spiel</a> gespielt.</p>
-<p>Die Schüler bearbeiten alle Aufgaben und speichern die Lösungen auf einem Whiteboard zu dem jeweiligen Kurs.</p>
-<p>Für die SQL-Abfragen wird <a href="https://sqlitebrowser.org/">SQLiteBrowser</a> verwendet.</p>
-<p>Die Datenbankdatei zum Spiel kann man <a href="https://sql.hauptquartier.eu/_sqlite_manager/maulwurfstadtDB.db.zip">hier</a> downloaden.</p>
-<p><a href="Vorbereitung-KA1.html">Vorbereitung auf die KA-1</a></p>
+<p>Werte wie Zeichenketten, Zahlen oder Wahrheitswerte werden in Variablen gespeichert. Variablen machen Programme leichter lesbar, weil durch die Bezeichnung der Variablen deutlich wird, wofür die verschiedenen Werte stehen. Zudem dienen Variablen dazu, Werte für spätere Operationen verfügbar zu halten. Sie sind also ein Speicher für Werte, die man im Laufe des Programms immer wieder benötigt. Möchte man eine Zeichenkette in einer Variablen speichern, dann muss dafür ein Speicherplatz geschaffen werden. Diesen Speicherplatz kann man sich wie eine Schublade vorstellen. Außerdem braucht man einen Namen für die Variable, damit man auf den Inhalt später wieder zugreifen kann. Im folgenden Beispiel wird die Vorgehensweise erläutert:</p>
+<div id="cell-2" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel für die Verwendung einer Variablen</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span>   <span class="co"># Deklaration und Initialisierung</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)      <span class="co"># Ausgabe der Variablen "name" auf dem Bildschirm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Peter</code></pre>
+</div>
+</div>
+<p>Dieses kleine Python-Programm enthält zwei unterschiedliche Anweisungen. Zu beachten ist, * dass jede Anweisung in einer neuen Zeile steht, * dass eine Zeichenkette immer zwischen doppelten (oder einfachen) Anführungsstrichen geschrieben wird, * dass mit dem Zeichen „#“ ein Kommentar zur Beschreibung der einzelnen Teile des Programms eingeleitet wird. Kommentare werden nicht als Programmcode interpretiert.</p>
+<section id="struktogramm-zum-programm" class="level2">
+<h2 class="anchored" data-anchor-id="struktogramm-zum-programm">Struktogramm zum Programm:</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02_Variablen_Zeichenkette_files/figure-html/cell-5-1-07638b61-9047-4a24-8569-762cef788bd1.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<section id="namensregeln-für-variablen" class="level3">
+<h3 class="anchored" data-anchor-id="namensregeln-für-variablen">Namensregeln für Variablen:</h3>
+<ul>
+<li>Am Anfang sollte ein Kleinbuchstabe stehen. Ziffern sind nicht zulässig.</li>
+<li>Danach dürfen Groß- und Kleinbuchstaben sowie Ziffern und Unterstriche verwendet werden.</li>
+<li>Umlaute wie ä, ö, ü das ß, Leerzeichen und weitere Sonderzeichen sind nicht erlaubt.</li>
+<li>Schlüsselwörter aus Programmiersprachen, z.B. for dürfen nicht verwendet werden.</li>
+<li>Der Name sollte etwas über den Inhalt der Variablen aussagen. Dabei hat sich in Python als Standard ergeben, dass bei zusammengesetzten Wörtern die einzelnen Wörter durch einen Unterstrich getrennt werden, also z.B. <em>alter_in_jahren</em> oder <em>gewicht_in_kg</em>.</li>
+</ul>
 </section>
-<section id="einführung-in-programmierung-mit-python" class="level2">
-<h2 class="anchored" data-anchor-id="einführung-in-programmierung-mit-python">Einführung in Programmierung mit python</h2>
-<p>Ab jetzt werden wir unsere Aufgaben in der Programmierumgebung Jupyter unter <a href="https://inf.mws-tuebingen.de">https://inf.mws-tuebingen.de</a> lösen.<br>
-Die Zugangsdaten bekommen Sie im Unterricht.</p>
-<section id="einführung-in-jupyter" class="level3">
-<h3 class="anchored" data-anchor-id="einführung-in-jupyter">Einführung in jupyter</h3>
-<p>Speichern Sie das folgende Arbeitsblatt am PC, laden Sie es auf den jupyter-Server hoch und bearbeiten Sie es.</p>
-<p><a href="00_Einführung-in-Jupyter.ipynb">00_Einführung-in-Jupyter.ipynb</a></p>
-</section>
-<section id="ausgabe-von-zeichen-mit-print" class="level3">
-<h3 class="anchored" data-anchor-id="ausgabe-von-zeichen-mit-print">Ausgabe von Zeichen mit print</h3>
-<p><a href="01_Ausgabe_von_Zeichen_mit_print.html">Arbeitsblatt</a></p>
-<p><a href="01-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="variablen-als-zeichenkette" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-zeichenkette">Variablen als Zeichenkette</h3>
-<p><a href="02_Variablen_Zeichenkette.html">Arbeitsblatt</a></p>
-</section>
-<section id="variablen-als-zahl" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-zahl">Variablen als Zahl</h3>
-<p><a href="03_Variable_als_Zahl.html">Arbeitsblatt</a></p>
-</section>
-<section id="variablen-als-wahrheitswert" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-wahrheitswert">Variablen als Wahrheitswert</h3>
-<p><a href="04_Variable_als_Wahrheitswert.html">Arbeitsblatt</a></p>
-<p><a href="04-Variablen-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="rechenoperatoren" class="level3">
-<h3 class="anchored" data-anchor-id="rechenoperatoren">Rechenoperatoren</h3>
-<p><a href="05_Rechenoperatoren.html">Arbeitsblatt</a></p>
-<p><a href="05-Rechenoperatoren-Aufgabe-LSG.html">Übungsblatt</a></p>
+<section id="ausgabe-mehrerer-variablen-in-einer-bildschirmausgabe" class="level3">
+<h3 class="anchored" data-anchor-id="ausgabe-mehrerer-variablen-in-einer-bildschirmausgabe">Ausgabe mehrerer Variablen in einer Bildschirmausgabe</h3>
+<div id="cell-8" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>subjekt <span class="op">=</span> <span class="st">"Ich"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>praedikat <span class="op">=</span> <span class="st">"spiele"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>objekt <span class="op">=</span> <span class="st">"Fußball"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(subjekt, praedikat, objekt, <span class="st">"auf der Wiese."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
 
