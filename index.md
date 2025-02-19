@@ -80,3 +80,9 @@ Zecihenketten](06_Ein-und-Ausgabe-Zeichenketten.html)
 [Übung 1](071-Aufgabe-LSG.html)
 
 [Übung 2](072-Aufgabe-LSG.html)
+
+#### Für die Schnellen
+
+Chapter 5, S. 41-45
+
+[Link zum Buch](https://inventwithpython.com/inventwithpython_3rd.pdf)
