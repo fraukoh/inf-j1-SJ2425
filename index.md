@@ -37,6 +37,13 @@ jupyter-Server hoch und bearbeiten Sie es.
 
 [Übungsblatt](01-Aufgabe-LSG.html)
 
+### Variablen in python
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jfOLXKPGXJ0?si=LA7XFWP73iiQsSDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1WqFJ5wsA4o?si=CTq3iZ_p47JFZYlj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
 ### Variablen als Zeichenkette
 
 [Arbeitsblatt](02_Variablen_Zeichenkette.html)
@@ -53,6 +60,23 @@ jupyter-Server hoch und bearbeiten Sie es.
 
 ### Rechenoperatoren
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XKFQ2_et5k8?si=rC450opLlxx2siJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
 [Arbeitsblatt](05_Rechenoperatoren.html)
 
 [Übungsblatt](05-Rechenoperatoren-Aufgabe-LSG.html)
+
+### Ein- und Ausgabe von Zeichenketten und Zahlen
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I9h1c-121Uk?si=tEj0NOI_5o6dTdx3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
+[Ein- und Ausgabe von
+Zecihenketten](06_Ein-und-Ausgabe-Zeichenketten.html)
+
+[Ein- und Ausgabe von Zahlen](07-Ein-und-Ausgabe-Zahlen.html)
+
+[Übung 1](071-Aufgabe-LSG.html)
+
+[Übung 2](072-Aufgabe-LSG.html)
