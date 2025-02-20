@@ -24,6 +24,9 @@ Ab jetzt werden wir unsere Aufgaben in der Programmierumgebung Jupyter
 unter <https://inf.mws-tuebingen.de> lösen.  
 Die Zugangsdaten bekommen Sie im Unterricht.
 
+Für die Struktogramme verwenden wir diesen [Struktogramm-Editor
+online](https://ddi.education/struktog/)
+
 ### Einführung in jupyter
 
 Speichern Sie das folgende Arbeitsblatt am PC, laden Sie es auf den
