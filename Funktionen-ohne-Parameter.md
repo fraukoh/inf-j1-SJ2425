@@ -49,13 +49,17 @@ folgenden Beispielen ändert sich das dann.) Hinter den Klammern folgt
 ein Doppelpunkt, um anzuzeigen, dass danach die Anweisungen folgen, mit
 denen die Funktion die Aufgaben durchführt, für die sie geschrieben
 wird. Im Beispiel hier ist das nur eine Anweisung:
-`print("Hallo miteinander!")`. \## Wichtig: \>Die zur Funktion gehörigen
-Anweisungen müssen auf einer Ebene eingerückt sein. Im Hauptteil des
-Programms wird die Funktion hallo() dreimal aufgerufen. Der Aufruf
-besteht aus dem Namen der Funktion, gefolgt von den runden Klammern. Bei
-jedem Aufruf springt das Programm zur Funktion und führt sie aus. Nach
-der Ausführung der Funktion springt das Programm wieder zur Aufrufstelle
-zurück und führt die Anweisung aus, die auf den Funktionsaufruf folgt.
-Auf diese Weise wird im vorliegenden Beispiel dreimal die Funktion
-hallo() aufgerufen und gibt dabei jedes Mal den Text “Hallo
-miteinander!” aus
+`print("Hallo miteinander!")`.
+
+## Wichtig:
+
+> Die zur Funktion gehörigen Anweisungen müssen auf einer Ebene
+> eingerückt sein. Im Hauptteil des Programms wird die Funktion hallo()
+> dreimal aufgerufen. Der Aufruf besteht aus dem Namen der Funktion,
+> gefolgt von den runden Klammern. Bei jedem \>Aufruf springt das
+> Programm zur Funktion und führt sie aus. Nach der Ausführung der
+> Funktion springt das Programm wieder zur Aufrufstelle zurück und führt
+> die \>Anweisung aus, die auf den Funktionsaufruf folgt. Auf diese
+> Weise wird im vorliegenden Beispiel dreimal die Funktion hallo()
+> aufgerufen und gibt dabei jedes Mal den \>Text “Hallo miteinander!”
+> aus

@@ -25,7 +25,7 @@ unter <https://inf.mws-tuebingen.de> lösen.
 Die Zugangsdaten bekommen Sie im Unterricht.
 
 Für die Struktogramme verwenden wir diesen [Struktogramm-Editor
-online](https://ddi.education/struktog/)
+online](https://struktogrammer.mws-tuebingen.de/)
 
 ### Einführung in jupyter
 
