@@ -24,6 +24,8 @@ print_cow()
         ||----w |
         ||     ||
 
+[Struktogramm](Aufgabe-Funktionen-mit-ohne-Parameter_files/figure-html/cell-3-1-image.png)
+
 # Aufgabe 2:
 
 Schreiben Sie ein Unterprogramm **dreiecksFlaeche**, welches die Länge
@@ -41,6 +43,8 @@ dreiecksFlaeche(3,4)
 
     Die Fläche beträgt:  6.0
 
+[Struktogramm](Aufgabe-Funktionen-mit-ohne-Parameter_files/figure-html/cell-6-1-image.png)
+
 # Aufgabe 3:
 
 Erstellen Sie eine Funktion, die den jährlichen Zinsbetrag berechnet.
@@ -55,3 +59,40 @@ zinsbetrag(1000, 5)
 ```
 
     Der Zinsbetrag beträgt:  50.0 Euro
+
+[Struktogramm](Aufgabe-Funktionen-mit-ohne-Parameter_files/figure-html/cell-9-1-image.png)
+
+# Aufgabe 4:
+
+Erstellen Sie eine Funktion **cow_say(text)**, die eine ASCII-Kuh mit
+einer Sprechblase ausgibt. Der übergebene Text soll in der Sprechblase
+erscheinen.
+
+``` python
+def cow_say(text): 
+    # Erstelle die Sprechblase
+    print("----------------")
+    print("<" , text , ">")
+    print("---------------")
+    
+    # Füge die Kuh hinzu
+    print("^__^")
+    print("(oo)\_______")
+    print("(__)\       )\/\/")
+    print("   ||----w |")
+    print("   ||     ||")
+
+# Beispielaufruf
+cow_say("Hallo Welt!")
+```
+
+    ----------------
+    < Hallo Welt! >
+    ---------------
+    ^__^
+    (oo)\_______
+    (__)\       )\/\/
+       ||----w |
+       ||     ||
+
+[Struktogramm](Aufgabe-Funktionen-mit-ohne-Parameter_files/figure-html/cell-12-1-image.png)

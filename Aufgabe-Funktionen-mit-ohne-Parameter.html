@@ -118,12 +118,13 @@ Die Funktion soll keine Parameter entgegennehmen. Sie soll die Kuh auf der Konso
     ||     ||</code></pre>
 </div>
 </div>
+<p><a href="Aufgabe-Funktionen-mit-ohne-Parameter_files/figure-html/cell-3-1-image.png">Struktogramm</a></p>
 <section id="aufgabe-2" class="level1">
 <h1>Aufgabe 2:</h1>
 <p>Schreiben Sie ein Unterprogramm <strong>dreiecksFlaeche</strong>, welches die Länge der Grundseite g und die zugehörige Höhe h übergeben bekommt.<br>
 Das Unterprogramm zeigt in der Konsole die Fläche A=0.5<em>g</em>h.<br>
 Testen Sie Ihr Unterprogramm indem Sie es aufrufen.</p>
-<div id="cell-4" class="cell" data-execution_count="7">
+<div id="cell-5" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dreiecksFlaeche(g,h):</span>
@@ -136,11 +137,12 @@ Testen Sie Ihr Unterprogramm indem Sie es aufrufen.</p>
 <pre><code>Die Fläche beträgt:  6.0</code></pre>
 </div>
 </div>
+<p><a href="Aufgabe-Funktionen-mit-ohne-Parameter_files/figure-html/cell-6-1-image.png">Struktogramm</a></p>
 </section>
 <section id="aufgabe-3" class="level1">
 <h1>Aufgabe 3:</h1>
 <p>Erstellen Sie eine Funktion, die den jährlichen Zinsbetrag berechnet. Die Funktion soll die Parameter Kapital und Zinssatz in Prozent haben.</p>
-<div id="cell-6" class="cell" data-execution_count="11">
+<div id="cell-8" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> zinsbetrag(kapital, zinssatz):</span>
@@ -153,6 +155,42 @@ Testen Sie Ihr Unterprogramm indem Sie es aufrufen.</p>
 <pre><code>Der Zinsbetrag beträgt:  50.0 Euro</code></pre>
 </div>
 </div>
+<p><a href="Aufgabe-Funktionen-mit-ohne-Parameter_files/figure-html/cell-9-1-image.png">Struktogramm</a></p>
+</section>
+<section id="aufgabe-4" class="level1">
+<h1>Aufgabe 4:</h1>
+<p>Erstellen Sie eine Funktion <strong>cow_say(text)</strong>, die eine ASCII-Kuh mit einer Sprechblase ausgibt. Der übergebene Text soll in der Sprechblase erscheinen.</p>
+<div id="cell-11" class="cell" data-execution_count="11">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cow_say(text): </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Erstelle die Sprechblase</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"----------------"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"&lt;"</span> , text , <span class="st">"&gt;"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"---------------"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Füge die Kuh hinzu</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"^__^"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"(oo)\_______"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"(__)\       )\/\/"</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"   ||----w |"</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"   ||     ||"</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispielaufruf</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>cow_say(<span class="st">"Hallo Welt!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>----------------
+&lt; Hallo Welt! &gt;
+---------------
+^__^
+(oo)\_______
+(__)\       )\/\/
+   ||----w |
+   ||     ||</code></pre>
+</div>
+</div>
+<p><a href="Aufgabe-Funktionen-mit-ohne-Parameter_files/figure-html/cell-12-1-image.png">Struktogramm</a></p>
 </section>
 
 </main>
