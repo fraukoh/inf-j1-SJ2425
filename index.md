@@ -97,3 +97,9 @@ Chapter 5, S. 41-45
 [Funktionen mit Parameter](Funktionen-mit-Parameter.html)
 
 [Übung](Aufgabe-Funktionen-mit-ohne-Parameter.html)
+
+#### Für die Schnellen
+
+Chapter 6, S. 46-61
+
+[Link zum Buch](https://inventwithpython.com/inventwithpython_3rd.pdf)
