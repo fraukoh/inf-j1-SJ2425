@@ -98,11 +98,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Sie sollen einen Reisezeit-Rechner programmieren, der für eine bestimmte Strecke und Geschwindigkeit die benötigte Reisezeit berechnet und ausgibt.</p>
 <ol type="1">
-<li><p>Erstellen Sie dafür: eine Funktionberechne_reisezeit(strecke, geschwindigkeit), die: Als Parameter die zurückzulegende Strecke in Kilometern und die Durchschnittsgeschwindigkeit in km/h entgegennimmt Die Reisezeit in Stunden berechnet (Strecke geteilt durch Geschwindigkeit) Die berechnete Zeit als Dezimalwert (z.B. 3.125 Stunden) zurückgibt</p></li>
-<li><p>Testen Sie Ihre Funktionen mit folgenden Werten: Strecke: 250 km Geschwindigkeit: 80 km/h</p></li>
+<li><p>Erstellen Sie dafür: eine Funktion <code>berechne_reisezeit(strecke, geschwindigkeit)</code>, die:<br>
+Als Parameter die zurückzulegende Strecke in Kilometern und die Durchschnittsgeschwindigkeit in km/h entgegennimmt<br>
+Die Reisezeit in Stunden berechnet (Strecke geteilt durch Geschwindigkeit)<br>
+Die berechnete Zeit als Dezimalwert (z.B. 3.125 Stunden) zurückgibt</p></li>
+<li><p>Testen Sie Ihre Funktionen mit folgenden Werten:<br>
+Strecke: 250 km<br>
+Geschwindigkeit: 80 km/h</p></li>
 </ol>
 <p>Ihr Programm soll zum Schluss eine benutzerfreundliche Meldung ausgeben: <code>"Für eine Strecke von 250 km mit 80 km/h benötigen Sie: 3.125 Stunden"</code></p>
 <div id="cell-2" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechne_reisezeit(strecke, geschwindigkeit):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    zeit <span class="op">=</span> strecke <span class="op">/</span> geschwindigkeit</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> zeit</span>
@@ -113,6 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>reisezeit <span class="op">=</span> berechne_reisezeit(strecke_km, geschwindigkeit_kmh)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Für eine Strecke von"</span>, strecke_km,  <span class="st">"km mit"</span>, geschwindigkeit_kmh, <span class="st">"km/h"</span>, <span class="st">"benötigen Sie:"</span>, reisezeit, <span class="st">"Stunden"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Für eine Strecke von 250 km mit 80 km/h benötigen Sie: 3.125 Stunden</code></pre>
 </div>
@@ -122,12 +130,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Aufgabe: Online-Shop Endpreisberechnung</h1>
 <p>Sie sollen für einen Online-Shop eine Funktion programmieren, die den Endpreis eines Artikels berechnet. Der Endpreis setzt sich zusammen aus dem ursprünglichen Artikelpreis, einem prozentualen Rabatt und den Versandkosten.</p>
 <ol type="1">
-<li>Erstellen Sie eine Funktion namens berechne_endpreis, die drei Parameter annimmt: preis: Der ursprüngliche Artikelpreis in Euro rabatt_prozent: Der Rabatt in Prozent (z.B. 15 für 15%) versandkosten: Die Versandkosten in Euro</li>
-<li>In der Funktion sollen Sie: Den Rabattbetrag in Euro berechnen (Preis × Rabatt-Prozent / 100) Den Endpreis berechnen (Preis - Rabattbetrag + Versandkosten) und zurückgeben</li>
-<li>Testen Sie Ihre Funktion mit folgenden Werten: Artikelpreis: 79.99 € Rabatt: 15% Versandkosten: 12.50 €</li>
+<li>Erstellen Sie eine Funktion namens <code>berechne_endpreis</code>, die drei Parameter annimmt:<br>
+<code>preis</code>: Der ursprüngliche Artikelpreis in Euro<br>
+<code>rabatt_prozent</code>: Der Rabatt in Prozent (z.B. 15 für 15%)<br>
+<code>versandkosten</code>: Die Versandkosten in Euro<br>
+</li>
+<li>In der Funktion sollen Sie:<br>
+Den Rabattbetrag in Euro berechnen (<code>Preis × Rabatt-Prozent / 100</code>)<br>
+Den Endpreis berechnen (<code>Preis - Rabattbetrag + Versandkosten</code>) und zurückgeben<br>
+</li>
+<li>Testen Sie Ihre Funktion mit folgenden Werten:<br>
+Artikelpreis: 79.99 €<br>
+Rabatt: 15%<br>
+Versandkosten: 12.50 €<br>
+</li>
 <li>Geben Sie den berechneten Endpreis mit der Nachricht “Endpreis mit Versand:” aus.</li>
 </ol>
 <div id="cell-5" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechne_endpreis(preis, rabatt_prozent, versandkosten):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    rabatt_betrag <span class="op">=</span> preis <span class="op">*</span> rabatt_prozent <span class="op">/</span> <span class="dv">100</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> preis <span class="op">-</span> rabatt_betrag <span class="op">+</span> versandkosten</span>
@@ -139,6 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>endpreis <span class="op">=</span> berechne_endpreis(artikel_preis, rabatt, versandkosten)</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Endpreis mit Versand:"</span>, endpreis, <span class="st">"€"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Endpreis mit Versand: 80.4915 €</code></pre>
 </div>
@@ -149,7 +171,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Aufgabe: Münzwert-Rechner</h1>
 <p>Sie sollen einen Münzwert-Rechner für Euro-Münzen programmieren. Der Rechner soll den Gesamtwert einer Münzsammlung berechnen, die aus 1-Cent-, 2-Cent-, 5-Cent-, 10-Cent-, 20-Cent- und 50-Cent-Münzen besteht.</p>
 <ol type="1">
-<li><p>Erstellen Sie eine Funktion berechne_gesamtwert, die: Sechs Parameter entgegennimmt: die Anzahl der jeweiligen Münzen (anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c) Den Wert jeder Münzart in Cent berechnet Alle Werte addiert, um den Gesamtwert in Cent zu ermitteln Den Gesamtwert in Cent zurückgibt</p></li>
+<li><p>Erstellen Sie eine Funktion <code>berechne_gesamtwert</code>, die:<br>
+Sechs Parameter entgegennimmt: die Anzahl der jeweiligen Münzen (<code>anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c</code>)<br>
+Den Wert jeder Münzart in Cent berechnet<br>
+Alle Werte addiert, um den Gesamtwert in Cent zu ermitteln<br>
+Den Gesamtwert in Cent zurückgibt</p></li>
 <li><p>Testen Sie Ihre Funktion mit folgenden Werten:<br>
 10 Stück 1-Cent-Münzen<br>
 5 Stück 2-Cent-Münzen<br>
@@ -157,9 +183,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 2 Stück 10-Cent-Münzen<br>
 1 Stück 20-Cent-Münzen<br>
 2 Stück 50-Cent-Münzen</p></li>
-<li><p>Geben Sie das Ergebnis in Euro aus (Cent-Wert / 100).</p></li>
+<li><p>Geben Sie das Ergebnis in Euro aus (<code>Cent-Wert / 100</code>).</p></li>
 </ol>
 <div id="cell-8" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechne_gesamtwert(anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    wert_1c <span class="op">=</span> anzahl_1c</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    wert_2c <span class="op">=</span> anzahl_2c <span class="op">*</span> <span class="dv">2</span></span>
@@ -175,6 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>gesamt_cent <span class="op">=</span> berechne_gesamtwert(<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Der Gesamtwert Ihrer Münzsammlung beträgt:"</span>, gesamt_cent<span class="op">/</span><span class="dv">100</span> , <span class="st">"Euro"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Der Gesamtwert Ihrer Münzsammlung beträgt: 1.95 Euro</code></pre>
 </div>
@@ -187,8 +216,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ihr Programm soll beide Umrechnungsrichtungen ermöglichen.</p>
 <p>Erstellen Sie zwei Funktionen:</p>
 <ol type="1">
-<li>Die Funktion note_zu_punkte(note), die: Als Parameter eine klassische Schulnote (z.B. 1,0 / 2,3 / 3,7) entgegennimmt Diese Note in das entsprechende Punktesystem der Oberstufe umrechnet Die berechneten Punkte zurückgibt</li>
-<li>Die Funktion punkte_zu_note(punkte), die: Als Parameter eine Punktzahl (z.B. 15 / 10 / 5) entgegennimmt Diese Punkte in eine klassische Schulnote umrechnet Die berechnete Note zurückgibt</li>
+<li>Die Funktion <code>note_zu_punkte(note)</code>, die: Als Parameter eine klassische Schulnote (z.B. 1,0 / 2,3 / 3,7) entgegennimmt Diese Note in das entsprechende Punktesystem der Oberstufe umrechnet Die berechneten Punkte zurückgibt</li>
+<li>Die Funktion <code>punkte_zu_note(punkte)</code>, die: Als Parameter eine Punktzahl (z.B. 15 / 10 / 5) entgegennimmt Diese Punkte in eine klassische Schulnote umrechnet Die berechnete Note zurückgibt</li>
 </ol>
 <p>Die Umrechnungsformel für die erste Funktion lautet: <code>15 - (note - 1) * 3</code> Umrechnungsformel für die zweite Funktion lautet: <code>1 + (15 - punkte) / 3</code></p>
 <p>Führen Sie Ihre Funktionen mit folgenden Werten aus:</p>
@@ -198,6 +227,8 @@ Umrechnung von 10 Punkten in eine Note</p>
 </blockquote>
 <p>Ihr Programm soll für jede Umrechnung eine informative Ausgabe liefern.</p>
 <div id="cell-11" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> note_zu_punkte(note):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">15</span> <span class="op">-</span> (note <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> <span class="dv">3</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -217,6 +248,7 @@ Umrechnung von 10 Punkten in eine Note</p>
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>punkte_test <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>note_test <span class="op">=</span> punkte_zu_note(punkte_test)</span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Punkte"</span>, punkte_test, <span class="st">"entsprechen der Note"</span>, note_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Die Note 2.0 entspricht 12.0 Punkten
 Die Note 3.7 entspricht 6.899999999999999 Punkten
