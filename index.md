@@ -98,6 +98,10 @@ Chapter 5, S. 41-45
 
 [Übung](Aufgabe-Funktionen-mit-ohne-Parameter.html)
 
+[Funktionen mit Rückgabewert](10_Funktionen-mit-Rückgabewert.html)
+
+[Übung](Aufgaben-Funktionen-mit-Rueckgabewert.html)
+
 #### Für die Schnellen
 
 Chapter 6, S. 46-61
