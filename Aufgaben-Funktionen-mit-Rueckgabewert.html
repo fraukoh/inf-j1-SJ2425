@@ -185,7 +185,7 @@ Den Gesamtwert in Cent zurückgibt</p></li>
 2 Stück 50-Cent-Münzen</p></li>
 <li><p>Geben Sie das Ergebnis in Euro aus (<code>Cent-Wert / 100</code>).</p></li>
 </ol>
-<div id="cell-8" class="cell" data-execution_count="5">
+<div id="cell-8" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechne_gesamtwert(anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c):</span>
@@ -193,8 +193,8 @@ Den Gesamtwert in Cent zurückgibt</p></li>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    wert_2c <span class="op">=</span> anzahl_2c <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    wert_5c <span class="op">=</span> anzahl_5c <span class="op">*</span> <span class="dv">5</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    wert_10c <span class="op">=</span> anzahl_10c <span class="op">*</span> <span class="dv">10</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    wert_20c <span class="op">=</span> anzahl_10c <span class="op">*</span> <span class="dv">20</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    wert_50c <span class="op">=</span> anzahl_10c <span class="op">*</span> <span class="dv">50</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    wert_20c <span class="op">=</span> anzahl_20c <span class="op">*</span> <span class="dv">20</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    wert_50c <span class="op">=</span> anzahl_50c <span class="op">*</span> <span class="dv">50</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    gesamtwert <span class="op">=</span> wert_1c <span class="op">+</span> wert_2c <span class="op">+</span> wert_5c <span class="op">+</span> wert_10c <span class="op">+</span> wert_20c <span class="op">+</span> wert_50c</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -205,7 +205,7 @@ Den Gesamtwert in Cent zurückgibt</p></li>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Der Gesamtwert Ihrer Münzsammlung beträgt:"</span>, gesamt_cent<span class="op">/</span><span class="dv">100</span> , <span class="st">"Euro"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Der Gesamtwert Ihrer Münzsammlung beträgt: 1.95 Euro</code></pre>
+<pre><code>Der Gesamtwert Ihrer Münzsammlung beträgt: 1.75 Euro</code></pre>
 </div>
 </div>
 <p><a href="Aufgaben-Funktionen-mit-Rueckgabewert_files/figure-html/cell-9-1-image.png">Struktogramm</a></p>
