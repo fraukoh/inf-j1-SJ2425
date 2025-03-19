@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Aufgabe: Abikarten</title>
+<title>Aufgabe: Mietzuschuss</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,16 +57,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="Aufgaben-IF-Anweisungen_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Aufgaben-IF-Anweisungen_files/libs/quarto-html/quarto.js"></script>
-<script src="Aufgaben-IF-Anweisungen_files/libs/quarto-html/popper.min.js"></script>
-<script src="Aufgaben-IF-Anweisungen_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Aufgaben-IF-Anweisungen_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Aufgaben-IF-Anweisungen_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Aufgaben-IF-Anweisungen_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Aufgaben-IF-Anweisungen_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Aufgaben-IF-Anweisungen_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Aufgaben-IF-Anweisungen_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Aufgabe-geschachtelte-IF_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Aufgabe-geschachtelte-IF_files/libs/quarto-html/quarto.js"></script>
+<script src="Aufgabe-geschachtelte-IF_files/libs/quarto-html/popper.min.js"></script>
+<script src="Aufgabe-geschachtelte-IF_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Aufgabe-geschachtelte-IF_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Aufgabe-geschachtelte-IF_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Aufgabe-geschachtelte-IF_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Aufgabe-geschachtelte-IF_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Aufgabe-geschachtelte-IF_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Aufgabe-geschachtelte-IF_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Aufgabe: Abikarten</h1>
+<h1 class="title">Aufgabe: Mietzuschuss</h1>
 </div>
 
 
@@ -96,50 +96,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In diesem Projekt soll überprüft werden, welcher Betrag zu zahlen ist, wenn eine Karte für den Abiball 30,00 Euro kostet und für Bestellungen von drei oder mehr Karten ein Rabatt von 20% gewährt wird.</p>
-<div id="89c5d67e-033f-44e0-b4da-daeafb1c956e" class="cell" data-execution_count="6">
+<p>Schreiben Sie ein Programm, das den Mietzuschuss in Abhängigkeit vom Mietpreis berechnet. Bei einer Miete von weniger als 500,00 Euro beträgt der Zuschuss 2%. Von 500,00 Euro bis unter 1000,00 Euro beträgt der Zuschuss 5% und ab 1000,00 Euro erhält man einen Zuschuss von 7%.</p>
+<div id="22e0b46c-3d0a-4266-b6b0-f004e05e57a3" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">40</span><span class="op">*</span><span class="st">"-"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Berechnung des Preises für Abikarten"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">40</span><span class="op">*</span><span class="st">"-"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>anzahl <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Anzahl der gewünschten Karten: "</span>))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>betrag <span class="op">=</span> anzahl <span class="op">*</span> <span class="dv">30</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> anzahl <span class="op">&gt;</span> <span class="dv">2</span>:</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    betrag <span class="op">=</span> betrag <span class="op">*</span> <span class="fl">0.8</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Der Preis für die Karten beträgt:"</span>, betrag, <span class="st">"€"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>miete <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Bitte Miete eingeben: "</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> miete <span class="op">&lt;</span> <span class="dv">500</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    zuschuss <span class="op">=</span> miete <span class="op">*</span> <span class="fl">0.02</span>    </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> miete <span class="op">&lt;</span> <span class="dv">1000</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        zuschuss <span class="op">=</span> miete <span class="op">*</span> <span class="fl">0.05</span>        </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        zuschuss <span class="op">=</span> miete <span class="op">*</span> <span class="fl">0.07</span>       </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Der Mietzuschuss beträgt:"</span>, zuschuss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>----------------------------------------
-Berechnung des Preises für Abikarten
-----------------------------------------
-Der Preis für die Karten beträgt: 72.0 €</code></pre>
-</div>
 <div class="cell-output cell-output-stdin">
-<pre><code>Anzahl der gewünschten Karten:  3</code></pre>
+<pre><code>Bitte Miete eingeben:  650</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Der Mietzuschuss beträgt: 32.5</code></pre>
 </div>
 </div>
-<p><a href="Aufgaben-IF-Anweisungen_files/figure-html/4878a343-73e8-4b42-b283-2c196d26c7fb-1-27c2663d-54e3-4b42-93d9-5c5971e7d510.png">Struktogramm</a></p>
-<section id="aufgabe-prüfung-ob-der-mindestpreis-erreicht-ist" class="level1">
-<h1>Aufgabe: Prüfung, ob der Mindestpreis erreicht ist</h1>
-<p>In diesem Projekt können Gebote für einen zum Kauf angebotenen Artikel abgegeben werden. In dem Programmcode ist der Mindestpreis (hier 24.99) hinterlegt. Ist der von dem Anwender vorgeschlagene Kaufpreis geringer, wird der Text „Ihr Angebotspreis liegt unterhalb des Mindestpreises!“ ausgegeben. Andernfalls erscheint der Text „Herzlichen Glückwunsch, Sie haben den Artikel erworben!“.</p>
-<div id="4abec861-109a-46da-b205-127b830d0a9c" class="cell" data-execution_count="5">
+<p><a href="Aufgabe-geschachtelte-IF_files/figure-html/47188da7-894f-4398-882f-c7992c414916-1-c30eaec2-50ff-4cf5-8fde-f6bbdc04e077.png">Struktogramm</a></p>
+<section id="aufgabe-anmeldung-berufliches-gymnasium" class="level1">
+<h1>Aufgabe: Anmeldung berufliches Gymnasium</h1>
+<p>In diesem Projekt soll überprüft werden, ob eine Anmeldung mit einem mittleren Bildungsabschluss an einem beruflichen Gymnasium in Baden-Württemberg möglich ist oder nicht. Die Bedingungen dafür lauten wie folgt: Abschlusszeugnis (Mittlerer Bildungsabschluss) der Realschule, der zweijährigen Berufsfachschule, der Berufsaufbauschule oder der Werkrealschule mit einem Notendurchschnitt von mindestens 3,0 aus Deutsch, Mathematik und Englisch (kein Fach schlechter als Note ausreichend).</p>
+<div id="2fc1e188-648e-411a-835c-42eb4accb95e" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>preis <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Wieviel wollen Sie zahlen? "</span>))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> preis <span class="op">&lt;</span> <span class="fl">24.99</span>:</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ihr Angebotspreis liegt unterhalb des Mindestpreises!"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Herzlichen Glückwunsch, Sie haben den Artikel erworben!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>note_deutsch <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Deutschnote: "</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>note_englisch <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Englischnote: "</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>note_mathematik <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Mathematiknote: "</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ist_zugelassen <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> note_deutsch <span class="op">&lt;=</span> <span class="dv">4</span>:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> note_englisch <span class="op">&lt;=</span> <span class="dv">4</span>:        </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> note_mathematik <span class="op">&lt;=</span> <span class="dv">4</span>:</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (note_deutsch <span class="op">+</span> note_englisch <span class="op">+</span> note_mathematik) <span class="op">/</span> <span class="dv">3</span> <span class="op">&lt;=</span> <span class="dv">3</span>:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                ist_zugelassen <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> ist_zugelassen <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Die Aufnahme ist möglich."</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Aufnahme ist nicht möglich."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdin">
-<pre><code>Wieviel wollen Sie zahlen?  24.98</code></pre>
+<pre><code>Deutschnote:  3
+Englischnote:  3
+Mathematiknote:  3</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Ihr Angebotspreis liegt unterhalb des Mindestpreises!</code></pre>
+<pre><code>Die Aufnahme ist möglich.</code></pre>
 </div>
 </div>
-<p><a href="Aufgaben-IF-Anweisungen_files/figure-html/5ca320c2-a775-4f76-bb6e-2566e99a9762-1-4e6bc43c-615b-4121-8888-5be4594f7bb5.png">Struktogramm</a></p>
+<p><a href="Aufgabe-geschachtelte-IF_files/figure-html/846d882d-4333-49f8-975f-42b967bd9197-1-fc429b10-aa07-48dd-ad6f-37b94c1b610d.png">Struktogramm</a></p>
 </section>
 
 </main>
