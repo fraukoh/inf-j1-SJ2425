@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Unterrichtsmaterial zum Informatikkurs J1 im SJ2425</title>
+<title>Verknüpfte Bedingungen (logische Operatoren)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,19 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="verknuepfte-Bedingungen_files/libs/clipboard/clipboard.min.js"></script>
+<script src="verknuepfte-Bedingungen_files/libs/quarto-html/quarto.js"></script>
+<script src="verknuepfte-Bedingungen_files/libs/quarto-html/popper.min.js"></script>
+<script src="verknuepfte-Bedingungen_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="verknuepfte-Bedingungen_files/libs/quarto-html/anchor.min.js"></script>
+<link href="verknuepfte-Bedingungen_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="verknuepfte-Bedingungen_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="verknuepfte-Bedingungen_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="verknuepfte-Bedingungen_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="verknuepfte-Bedingungen_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -45,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Unterrichtsmaterial zum Informatikkurs J1 im SJ2425</h1>
+<h1 class="title">Verknüpfte Bedingungen (logische Operatoren)</h1>
 </div>
 
 
@@ -62,92 +96,73 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="datenbanken" class="level2">
-<h2 class="anchored" data-anchor-id="datenbanken">Datenbanken</h2>
-<p>Im Unterricht wird <a href="https://sql.hauptquartier.eu/">folgendes Spiel</a> gespielt.</p>
-<p>Die Schüler bearbeiten alle Aufgaben und speichern die Lösungen auf einem Whiteboard zu dem jeweiligen Kurs.</p>
-<p>Für die SQL-Abfragen wird <a href="https://sqlitebrowser.org/">SQLiteBrowser</a> verwendet.</p>
-<p>Die Datenbankdatei zum Spiel kann man <a href="https://sql.hauptquartier.eu/_sqlite_manager/maulwurfstadtDB.db.zip">hier</a> downloaden.</p>
-<p><a href="Vorbereitung-KA1.html">Vorbereitung auf die KA-1</a></p>
+<p>Wenn mehrere Bedingungen miteinander verknüpft werden, dann kann man die logischen Operatoren <strong>AND</strong> für das logische und bzw. <strong>OR</strong> für das logische Oder nutzen. Beim logischen Und müssen alle Teilbedingungen wahr sein, damit die gesamte Bedingung wahr ist. Beim logischen Oder reicht es, wenn mindestens eine Teilbedingung wahr ist, damit die gesamte Bedingung wahr ist. Zusätzlich gibt es den logischen Operator <strong>NOT</strong> für das logische Nicht. Die Wahrheitswerte einer Bedingung werden dann umgedreht. <em>False</em> wird zu <em>True</em> und <em>True</em> wird zu <em>False</em>.</p>
+<div id="47cd794c-af53-4242-9498-84c60364c290" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="dv">21</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> alter <span class="op">&gt;</span> <span class="dv">12</span> <span class="kw">and</span> alter <span class="op">&lt;</span> <span class="dv">20</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="bu">print</span>(<span class="st">"Du bist ein Teenager!"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> alter <span class="op">&lt;</span> <span class="dv">10</span> <span class="kw">or</span> alter <span class="op">&gt;</span> <span class="dv">20</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     <span class="bu">print</span>(<span class="st">"Dein Alter liegt unter 10 ODER über 20 Jahren!"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> alter <span class="op">&lt;</span> <span class="dv">18</span>:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>     <span class="bu">print</span>(<span class="st">"Dein Alter liegt NICHT unter 18 Jahren =&gt; volljährig!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dein Alter liegt unter 10 ODER über 20 Jahren!
+Dein Alter liegt NICHT unter 18 Jahren =&gt; volljährig!</code></pre>
+</div>
+</div>
+<p>Zeile 1: Die Variable alter wird deklariert und erhält den Wert 21.<br>
+Zeile 2: Hier wird geprüft, ob alter größer 12 UND kleiner 20 ist. Falls das der Fall ist, kommt die dazu passende Ausgabe.<br>
+Zeile 4: Hier wird geprüft, ob alter kleiner zehn ODER größer 20 ist. Falls das der Fall ist, kommt die dazu passende Ausgabe.<br>
+Zeile 6: Hier wird festgestellt, ob alter NICHT kleiner 18 ist. Falls diese Aussage erfüllt ist, kommt die dazu passende Ausgabe.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="verknuepfte-Bedingungen_files/figure-html/285143f2-78ea-4345-9d41-15ab81210f9f-1-e7a296d9-b5e7-47e6-a72a-51b9c2074c78.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<section id="denkaufgabe-test-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="denkaufgabe-test-yourself">Denkaufgabe / Test yourself:</h2>
+<p>Was wird das Programm ausgeben, wenn die Variable alter zu Beginn des Programms auf 17 gesetzt wird? Öffnen Sie das obige Programm und überprüfen Sie, ob Ihre Vorhersage stimmt.</p>
 </section>
-<section id="einführung-in-programmierung-mit-python" class="level2">
-<h2 class="anchored" data-anchor-id="einführung-in-programmierung-mit-python">Einführung in Programmierung mit python</h2>
-<p>Ab jetzt werden wir unsere Aufgaben in der Programmierumgebung Jupyter unter <a href="https://inf.mws-tuebingen.de">https://inf.mws-tuebingen.de</a> lösen.<br>
-Die Zugangsdaten bekommen Sie im Unterricht.</p>
-<p>Für die Struktogramme verwenden wir diesen <a href="https://struktogrammer.mws-tuebingen.de/">Struktogramm-Editor online</a></p>
-<section id="einführung-in-jupyter" class="level3">
-<h3 class="anchored" data-anchor-id="einführung-in-jupyter">Einführung in jupyter</h3>
-<p>Speichern Sie das folgende Arbeitsblatt am PC, laden Sie es auf den jupyter-Server hoch und bearbeiten Sie es.</p>
-<p><a href="00_Einführung-in-Jupyter.ipynb">00_Einführung-in-Jupyter.ipynb</a></p>
-</section>
-<section id="ausgabe-von-zeichen-mit-print" class="level3">
-<h3 class="anchored" data-anchor-id="ausgabe-von-zeichen-mit-print">Ausgabe von Zeichen mit print</h3>
-<p><a href="01_Ausgabe_von_Zeichen_mit_print.html">Arbeitsblatt</a></p>
-<p><a href="01-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="variablen-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-in-python">Variablen in python</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jfOLXKPGXJ0?si=LA7XFWP73iiQsSDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1WqFJ5wsA4o?si=CTq3iZ_p47JFZYlj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-</section>
-<section id="variablen-als-zeichenkette" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-zeichenkette">Variablen als Zeichenkette</h3>
-<p><a href="02_Variablen_Zeichenkette.html">Arbeitsblatt</a></p>
-</section>
-<section id="variablen-als-zahl" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-zahl">Variablen als Zahl</h3>
-<p><a href="03_Variable_als_Zahl.html">Arbeitsblatt</a></p>
-</section>
-<section id="variablen-als-wahrheitswert" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-wahrheitswert">Variablen als Wahrheitswert</h3>
-<p><a href="04_Variable_als_Wahrheitswert.html">Arbeitsblatt</a></p>
-<p><a href="04-Variablen-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="rechenoperatoren" class="level3">
-<h3 class="anchored" data-anchor-id="rechenoperatoren">Rechenoperatoren</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XKFQ2_et5k8?si=rC450opLlxx2siJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="05_Rechenoperatoren.html">Arbeitsblatt</a></p>
-<p><a href="05-Rechenoperatoren-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="ein--und-ausgabe-von-zeichenketten-und-zahlen" class="level3">
-<h3 class="anchored" data-anchor-id="ein--und-ausgabe-von-zeichenketten-und-zahlen">Ein- und Ausgabe von Zeichenketten und Zahlen</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/I9h1c-121Uk?si=tEj0NOI_5o6dTdx3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="06_Ein-und-Ausgabe-Zeichenketten.html">Ein- und Ausgabe von Zecihenketten</a></p>
-<p><a href="07-Ein-und-Ausgabe-Zahlen.html">Ein- und Ausgabe von Zahlen</a></p>
-<p><a href="071-Aufgabe-LSG.html">Übung 1</a></p>
-<p><a href="072-Aufgabe-LSG.html">Übung 2</a></p>
-<section id="für-die-schnellen" class="level4">
-<h4 class="anchored" data-anchor-id="für-die-schnellen">Für die Schnellen</h4>
-<p>Chapter 5, S. 41-45</p>
-<p><a href="https://inventwithpython.com/inventwithpython_3rd.pdf">Link zum Buch</a></p>
-</section>
-</section>
-<section id="funktionen-oder-unterprogramme-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="funktionen-oder-unterprogramme-in-python">Funktionen oder Unterprogramme in python</h3>
-<p><a href="Funktionen-ohne-Parameter.html">Funktionen ohne Parameter</a></p>
-<p><a href="Funktionen-mit-Parameter.html">Funktionen mit Parameter</a></p>
-<p><a href="Aufgabe-Funktionen-mit-ohne-Parameter.html">Übung</a></p>
-<p><a href="10_Funktionen-mit-Rückgabewert.html">Funktionen mit Rückgabewert</a></p>
-<p><a href="Aufgaben-Funktionen-mit-Rueckgabewert.html">Übung</a></p>
-<section id="für-die-schnellen-1" class="level4">
-<h4 class="anchored" data-anchor-id="für-die-schnellen-1">Für die Schnellen</h4>
-<p>Chapter 6, S. 46-61</p>
-<p><a href="https://inventwithpython.com/inventwithpython_3rd.pdf">Link zum Buch</a></p>
-</section>
-</section>
-<section id="if-anweisung" class="level3">
-<h3 class="anchored" data-anchor-id="if-anweisung">IF-Anweisung</h3>
-<p><a href="IF-Anweisungen.html">Ein- und zweiseitige IF-Anweisungen</a></p>
-<p><a href="Aufgaben-IF-Anweisungen.html">Übung</a></p>
-<p><a href="geschachtelte-IF-Anweisung.html">Geschachtelte IF-Anweisung</a></p>
-<p><a href="Aufgabe-geschachtelte-IF.html">Übung</a></p>
-<p><a href="verknuepfte-Bedingungen.html">Verknüpfte Bedingungen</a></p>
-<p><a href="Aufgaben-verknuepfte-Bedingungen.html">Übung</a></p>
-</section>
+<section id="übersicht-über-die-logischen-operatoren" class="level2">
+<h2 class="anchored" data-anchor-id="übersicht-über-die-logischen-operatoren">Übersicht über die logischen Operatoren</h2>
+<p>Hier eine kurze Übersicht über die Verwendung von Operatoren in Python:</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th style="text-align: center;">Beispiel</th>
+<th style="text-align: center;">Beschreibung</th>
+<th style="text-align: left;">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>and</td>
+<td style="text-align: center;">alter&gt;12 <strong>and</strong> alter&lt;20</td>
+<td style="text-align: center;">und</td>
+<td style="text-align: left;">Die Bedingung ist erfüllt (True), wenn beide Aussagen zutreffen.</td>
+</tr>
+<tr class="even">
+<td>or</td>
+<td style="text-align: center;">alter &lt;10 <strong>or</strong> alter&gt;20</td>
+<td style="text-align: center;">oder</td>
+<td style="text-align: left;">Die Bedingung ist erfüllt (True), wenn die eine <strong>oder</strong> die andere Aussage (oder beide) erfüllt sind.</td>
+</tr>
+<tr class="odd">
+<td>not</td>
+<td style="text-align: center;"><strong>not</strong> alter&lt;18</td>
+<td style="text-align: center;">nicht</td>
+<td style="text-align: left;"><strong>not</strong> ändert einen Ausdruck von True in False und umgekehrt. Hier ist die Bedingung erfüllt, wenn das Alter nicht &lt; 18 ist.</td>
+</tr>
+</tbody>
+</table>
 </section>
 
 </main>
