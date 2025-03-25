@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Aufgabe: Taschengeld</title>
+<title>struktogramm-promt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,16 +57,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="Aufgaben-FOR-Schleife_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Aufgaben-FOR-Schleife_files/libs/quarto-html/quarto.js"></script>
-<script src="Aufgaben-FOR-Schleife_files/libs/quarto-html/popper.min.js"></script>
-<script src="Aufgaben-FOR-Schleife_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Aufgaben-FOR-Schleife_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Aufgaben-FOR-Schleife_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Aufgaben-FOR-Schleife_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Aufgaben-FOR-Schleife_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Aufgaben-FOR-Schleife_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Aufgaben-FOR-Schleife_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Struktogramm-Promt_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Struktogramm-Promt_files/libs/quarto-html/quarto.js"></script>
+<script src="Struktogramm-Promt_files/libs/quarto-html/popper.min.js"></script>
+<script src="Struktogramm-Promt_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Struktogramm-Promt_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Struktogramm-Promt_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Struktogramm-Promt_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Struktogramm-Promt_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Struktogramm-Promt_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Struktogramm-Promt_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -77,173 +77,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Aufgabe: Taschengeld</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>Schreiben Sie ein Programm, das den Betrag des Taschengelds in Abhängigkeit vom Alter ausgibt. Das Taschengeld wird vom 6. bis zum 21. Lebensjahr ausgezahlt. Dabei sind der Anfangsbetrag und die jährliche Erhöhung vom Benutzer einzugeben.</p>
-<div id="cell-2" class="cell" data-execution_count="6">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>taschengeld <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Wie hoch ist das erste Taschengeld? "</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>erhoehung <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Jährliche Erhöhung des Taschengelds: "</span>))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alter <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>, <span class="dv">22</span>):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Alter"</span>, alter, <span class="st">":"</span>, taschengeld, <span class="st">"€"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    taschengeld <span class="op">=</span> taschengeld <span class="op">+</span> erhoehung</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div id="9d6843e2-94e8-4210-81cc-e139d10afaff" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test(a,b):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> a <span class="op">&lt;</span> b:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        erg <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        erg <span class="op">=</span> a <span class="op">-</span> b</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> erg</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">4.5</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ar <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>laenge <span class="op">=</span> <span class="bu">len</span>(ar)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,laenge):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    ar[i] <span class="op">=</span> ar[i] <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">678</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Geben Sie eine Ganzzahl ein:"</span>))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Geben Sie eine Dazimalzahl ein:"</span>))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Geben Sie ein String ein"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> x <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> z <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">+</span><span class="dv">1</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ergebnis:"</span>, x, z)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>test(x,y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdin">
-<pre><code>Wie hoch ist das erste Taschengeld?  1
-Jährliche Erhöhung des Taschengelds:  2</code></pre>
+<pre><code>Geben Sie eine Ganzzahl ein: 5
+Geben Sie eine Dazimalzahl ein: 6
+Geben Sie ein String ein wrwer</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Alter 6 : 1.0 €
-Alter 7 : 3.0 €
-Alter 8 : 5.0 €
-Alter 9 : 7.0 €
-Alter 10 : 9.0 €
-Alter 11 : 11.0 €
-Alter 12 : 13.0 €
-Alter 13 : 15.0 €
-Alter 14 : 17.0 €
-Alter 15 : 19.0 €
-Alter 16 : 21.0 €
-Alter 17 : 23.0 €
-Alter 18 : 25.0 €
-Alter 19 : 27.0 €
-Alter 20 : 29.0 €
-Alter 21 : 31.0 €</code></pre>
+<pre><code>Ergebnis: 5 10
+Ergebnis: 6 20
+Ergebnis: 7 40
+Ergebnis: 8 80
+Ergebnis: 9 160
+Ergebnis: 10 320</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>688</code></pre>
 </div>
 </div>
-<p><a href="Aufgaben-FOR-Schleife_files/figure-html/cell-3-1-73ce9ef3-dce1-4ce2-8bd9-d26b1369a823.png">Struktogramm</a></p>
-<section id="aufgabe-finanzplan" class="level1">
-<h1>Aufgabe: Finanzplan</h1>
-<p>In diesem Projekt soll überprüft werden, welchen Zielwert eine Finanzanlage, die zu einem bestimmten Zinssatz für eine bestimme Anlagedauer (in Jahren) durch Zinseszins-Vermehrung erreicht. Für jedes Jahr, die die Finanzanlage läuft, soll der Wert am Ende des Jahres ausgegeben werden.</p>
-<div id="cell-5" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>betrag <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Betrag: "</span>))</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>zinssatz <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Zinssatz: "</span>))</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>jahre <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Laufzeit in Jahren: "</span>))</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> jahr <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, jahre <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    betrag <span class="op">=</span> betrag <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> zinssatz<span class="op">/</span><span class="dv">100</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span> (<span class="st">"Jahr"</span>, jahr, <span class="st">":"</span>, betrag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdin">
-<pre><code>Betrag:  10000
-Zinssatz:  2
-Laufzeit in Jahren:  4</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Jahr 1 : 10200.0
-Jahr 2 : 10404.0
-Jahr 3 : 10612.08
-Jahr 4 : 10824.3216</code></pre>
-</div>
-</div>
-<p><a href="Aufgaben-FOR-Schleife_files/figure-html/cell-6-1-7f26a608-7491-4820-8e65-6ad00bfea030.png">Struktogramm</a></p>
-</section>
-<section id="aufgabe-smartphone-akku" class="level1">
-<h1>Aufgabe: Smartphone-Akku</h1>
-<p>Erstelle ein Programm, das simuliert, wie sich der Akkustand eines Smartphones über 10 Stunden entlädt. Der Startakkustand und die stündliche Entladung in Prozent sollen eingegeben werden.</p>
-<div id="cell-8" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>akku <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Aktueller Akkustand in %? "</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>entladung <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Entladung pro Stunde in %? "</span>))</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> stunde <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    akku <span class="op">=</span> akku <span class="op">-</span> entladung</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Nach"</span>, stunde, <span class="st">"Stunden:"</span>, akku, <span class="st">"%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdin">
-<pre><code>Aktueller Akkustand in %?  90
-Entladung pro Stunde in %?  3</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Nach 1 Stunden: 87 %
-Nach 2 Stunden: 84 %
-Nach 3 Stunden: 81 %
-Nach 4 Stunden: 78 %
-Nach 5 Stunden: 75 %
-Nach 6 Stunden: 72 %
-Nach 7 Stunden: 69 %
-Nach 8 Stunden: 66 %
-Nach 9 Stunden: 63 %
-Nach 10 Stunden: 60 %</code></pre>
-</div>
-</div>
-<p><a href="Aufgaben-FOR-Schleife_files/figure-html/cell-9-1-38c3f38a-1839-4c83-9026-d5f53c927a13.png">Struktogramm</a></p>
-</section>
-<section id="aufgabe-tiktok-follower" class="level1">
-<h1>Aufgabe: TikTok-Follower</h1>
-<p>Schreibe ein Programm, das berechnet, wie viele Follower ein TikTok-Account nach einer Woche hat, wenn täglich neue dazukommen. Die Anfangszahl und die täglichen neuen Follower sollen eingegeben werden.</p>
-<div id="cell-11" class="cell" data-execution_count="5">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>follower <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Aktuelle Followerzahl? "</span>))</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>neue <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Neue Follower pro Tag? "</span>))</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tag <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    follower <span class="op">=</span> follower <span class="op">+</span> neue</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Tag"</span>, tag, <span class="st">":"</span>, follower, <span class="st">"Follower"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdin">
-<pre><code>Aktuelle Followerzahl?  550
-Neue Follower pro Tag?  15</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Tag 1 : 565 Follower
-Tag 2 : 580 Follower
-Tag 3 : 595 Follower
-Tag 4 : 610 Follower
-Tag 5 : 625 Follower
-Tag 6 : 640 Follower
-Tag 7 : 655 Follower</code></pre>
-</div>
-</div>
-<p><a href="Aufgaben-FOR-Schleife_files/figure-html/cell-12-1-17423e08-e6c0-4083-9b9d-2e678c553f0e.png">Struktogramm</a></p>
-</section>
-<section id="aufgabe-süßigkeiten-rechner" class="level1">
-<h1>Aufgabe: Süßigkeiten-Rechner</h1>
-<p>Erstelle ein Programm, das berechnet, wie viele Süßigkeiten du in einer Woche isst. Gib die Anzahl der täglichen Süßigkeiten ein und lass dir für 7 Tage die Gesamtsumme anzeigen.</p>
-<div id="cell-14" class="cell" data-execution_count="7">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>gesamt <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>taeglich <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Wie viele Süßigkeiten isst du pro Tag? "</span>))</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tag <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    gesamt <span class="op">=</span> gesamt <span class="op">+</span> taeglich</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Nach"</span>, tag, <span class="st">"Tagen:"</span>, gesamt, <span class="st">"Süßigkeiten"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdin">
-<pre><code>Wie viele Süßigkeiten isst du pro Tag?  3</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Nach 1 Tagen: 3 Süßigkeiten
-Nach 2 Tagen: 6 Süßigkeiten
-Nach 3 Tagen: 9 Süßigkeiten
-Nach 4 Tagen: 12 Süßigkeiten
-Nach 5 Tagen: 15 Süßigkeiten
-Nach 6 Tagen: 18 Süßigkeiten
-Nach 7 Tagen: 21 Süßigkeiten</code></pre>
-</div>
-</div>
-<p><a href="Aufgaben-FOR-Schleife_files/figure-html/cell-15-1-edc130e7-9327-4bc4-a0a3-6eb9a2ca8f58.png">Struktogramm</a></p>
-</section>
+<p>{“id”:“ccd30e6d-b537-10b1-1c80-5abf35f7”,“type”:“InsertNode”,“followElement”:{“id”:“92665c36-7e58-88ba-980e-a4658d69”,“type”:“FunctionNode”,“text”:“test”,“parameters”:[{“pos”:“0”,“parName”:“a”},{“pos”:“3”,“parName”:“b”}],“followElement”:{“id”:“8157bf7c-3e82-8dbe-f99e-fd59960e”,“type”:“InsertNode”,“followElement”:{“id”:“b5a09145-f7eb-af06-8b77-86f5c0d9”,“type”:“InitialNode”,“text”:“x als Ganzzahl = 4”,“followElement”:{“id”:“ef818814-bbc2-1186-8de6-bb068824”,“type”:“InsertNode”,“followElement”:{“id”:“06125ef7-d7d1-5b70-223f-8d898cb8”,“type”:“InitialNode”,“text”:“y als Dezimalzahl = 4.5”,“followElement”:{“id”:“80217435-1875-bce7-8a30-e4625044”,“type”:“InsertNode”,“followElement”:{“id”:“efc131e8-a0d4-f83e-2203-0d8d9d71”,“type”:“InitialNode”,“text”:“arr als Array = [2,3,4,5]”,“followElement”:{“id”:“47b7475d-603f-5f51-58e1-0376e08b”,“type”:“InsertNode”,“followElement”:{“id”:“c22eb68e-054c-e54b-48b5-82204728”,“type”:“InitialNode”,“text”:“laenge als Ganzzahl = Anzahl der Elemente im Vektor arr”,“followElement”:{“id”:“8dfdfce0-9285-95e5-0adf-40f73e9d”,“type”:“InsertNode”,“followElement”:{“id”:“00c5a2d4-1ba4-e2d6-fb5c-daf4f571”,“type”:“CountLoopNode”,“text”:“Zähle i von 0 bis 4 , Schrittweite 1”,“followElement”:{“id”:“a0b21668-316f-e093-8f5d-fd255188”,“type”:“InsertNode”,“followElement”:{“id”:“f85c217a-a715-6e8a-edbd-7b2ee4bd”,“type”:“AssignNode”,“text”:“y = 678”,“followElement”:{“id”:“7f03784c-d38e-13e0-19b2-f728a3ad”,“type”:“InsertNode”,“followElement”:{“id”:“9fe54b4d-b01d-2b50-2ee9-506ca127”,“type”:“InputNode”,“text”:“z als Ganzzahl”,“followElement”:{“id”:“0ef3a6ca-8f1a-7323-e767-885c7ee7”,“type”:“InsertNode”,“followElement”:{“id”:“44fcde40-3414-b382-f7b3-980ee9c9”,“type”:“InputNode”,“text”:“z als Dezimalzahl”,“followElement”:{“id”:“c80862ea-314e-a4f7-ac6e-93e46485”,“type”:“InsertNode”,“followElement”:{“id”:“be117bd3-c50e-9480-99c4-a322dcfa”,“type”:“InputNode”,“text”:“name als Zeichenkette”,“followElement”:{“id”:“2b440d4a-e6be-4ce2-4e51-1bce27e9”,“type”:“InsertNode”,“followElement”:{“id”:“4e4201f2-e330-2ef1-93e1-935c82e2”,“type”:“HeadLoopNode”,“text”:“Wiederhole solange x &lt; 10”,“followElement”:{“id”:“f3dbc3a1-1677-83d4-57c2-a1caaad5”,“type”:“InsertNode”,“followElement”:{“id”:“6a672813-d558-6314-01b0-b4943b6b”,“type”:“CallNode”,“text”:“test(x,y)”,“followElement”:{“id”:“3e1c8aa1-7be6-d0f1-d0d8-a5d3cc9d”,“type”:“InsertNode”,“followElement”:null}}},“child”:{“id”:“315d92ce-7d95-12ea-aada-532873ec”,“type”:“InsertNode”,“followElement”:{“id”:“f9067169-8806-6e78-f450-d19ab2ff”,“type”:“AssignNode”,“text”:“z = z * 2”,“followElement”:{“id”:“ce9d2edc-24b4-a9fb-f3c6-7be8ed12”,“type”:“InsertNode”,“followElement”:{“id”:“ee3e9ddf-1e62-4e8d-48e6-4f94295e”,“type”:“AssignNode”,“text”:“x = x +1”,“followElement”:{“id”:“743dcf94-688c-4f85-e7d8-a066ecff”,“type”:“InsertNode”,“followElement”:{“id”:“19d19d05-c7d3-821a-6b30-897f1fb8”,“type”:“OutputNode”,“text”:“"Ergebnis:", x, z”,“followElement”:{“id”:“e18b01ae-bbcb-337e-680e-9d6b163a”,“type”:“InsertNode”,“followElement”:null}}}}}}}}}}}}}}}}},“child”:{“id”:“b414ff67-74ec-b807-1c59-43e30fd1”,“type”:“InsertNode”,“followElement”:{“id”:“47ec7f72-799a-a2b4-a0d6-2705981f”,“type”:“AssignNode”,“text”:“ar[i] = ar[i] + 2”,“followElement”:{“id”:“5ddc8e75-d7c1-9795-c1c0-9f0a7536”,“type”:“InsertNode”,“followElement”:null}}}}}}}}}}}}},“child”:{“id”:“ce654427-51fa-ecf6-67d8-940c61f3”,“type”:“InsertNode”,“followElement”:{“id”:“e9a8a75d-a758-54b0-0dbc-42837989”,“type”:“BranchNode”,“text”:“a &lt; b”,“followElement”:{“id”:“f5e2b51f-4ede-2b3a-79bc-c4035e61”,“type”:“InsertNode”,“followElement”:{“id”:“1b93b927-b68f-2599-83f3-181090f0”,“type”:“ReturnNode”,“text”:“erg”,“followElement”:{“id”:“af7f94b0-cf3b-2035-97d3-f8304dcb”,“type”:“InsertNode”,“followElement”:null}}},“trueChild”:{“id”:“c955a824-1d68-4c24-add2-3d2ae4fe”,“type”:“InsertNode”,“followElement”:{“id”:“06a5b88b-cb46-e9d3-a4cb-3ab37bae”,“type”:“InitialNode”,“text”:“erg als Dezimalzahl = a + b”,“followElement”:{“id”:“f29da5b7-e6df-226e-74d6-289c1da4”,“type”:“InsertNode”,“followElement”:null}}},“falseChild”:{“id”:“50f2e93a-2584-0195-6e27-8ccb10c0”,“type”:“InsertNode”,“followElement”:{“id”:“b9dfacc5-656a-80e2-c6ab-b1c26344”,“type”:“InitialNode”,“text”:“erg als Dezimalzahl = a - b”,“followElement”:{“id”:“02c708df-d469-9713-f0f8-36c3b0ac”,“type”:“InsertNode”,“followElement”:null}}}}}}}</p>
 
 </main>
 <!-- /main column -->
