@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Unterrichtsmaterial zum Informatikkurs J1 im SJ2425</title>
+<title>Aufgabe - Taschengeld:</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,19 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Aufgaben-FOR-Schleife_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Aufgaben-FOR-Schleife_files/libs/quarto-html/quarto.js"></script>
+<script src="Aufgaben-FOR-Schleife_files/libs/quarto-html/popper.min.js"></script>
+<script src="Aufgaben-FOR-Schleife_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Aufgaben-FOR-Schleife_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Aufgaben-FOR-Schleife_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Aufgaben-FOR-Schleife_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Aufgaben-FOR-Schleife_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Aufgaben-FOR-Schleife_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Aufgaben-FOR-Schleife_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -45,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Unterrichtsmaterial zum Informatikkurs J1 im SJ2425</h1>
+<h1 class="title">Aufgabe - Taschengeld:</h1>
 </div>
 
 
@@ -62,97 +96,71 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="datenbanken" class="level2">
-<h2 class="anchored" data-anchor-id="datenbanken">Datenbanken</h2>
-<p>Im Unterricht wird <a href="https://sql.hauptquartier.eu/">folgendes Spiel</a> gespielt.</p>
-<p>Die Schüler bearbeiten alle Aufgaben und speichern die Lösungen auf einem Whiteboard zu dem jeweiligen Kurs.</p>
-<p>Für die SQL-Abfragen wird <a href="https://sqlitebrowser.org/">SQLiteBrowser</a> verwendet.</p>
-<p>Die Datenbankdatei zum Spiel kann man <a href="https://sql.hauptquartier.eu/_sqlite_manager/maulwurfstadtDB.db.zip">hier</a> downloaden.</p>
-<p><a href="Vorbereitung-KA1.html">Vorbereitung auf die KA-1</a></p>
+<section id="problemstellung" class="level3">
+<h3 class="anchored" data-anchor-id="problemstellung">Problemstellung</h3>
+<p>Schreiben Sie ein Programm, das den Betrag des Taschengelds in Abhängigkeit vom Alter ausgibt. Das Taschengeld wird vom 6. bis zum 21. Lebensjahr ausgezahlt. Dabei sind der Anfangsbetrag und die jährliche Erhöhung vom Benutzer einzugeben.</p>
+<div id="cell-2" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>taschengeld <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Wie hoch ist das erste Taschengeld? "</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>erhoehung <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Jährliche Erhöhung des Taschengelds: "</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alter <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>, <span class="dv">22</span>):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Alter"</span>, alter, <span class="st">":"</span>, taschengeld, <span class="st">"€"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    taschengeld <span class="op">=</span> taschengeld <span class="op">+</span> erhoehung</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdin">
+<pre><code>Wie hoch ist das erste Taschengeld?  1
+Jährliche Erhöhung des Taschengelds:  2</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Alter 6 : 1.0 €
+Alter 7 : 3.0 €
+Alter 8 : 5.0 €
+Alter 9 : 7.0 €
+Alter 10 : 9.0 €
+Alter 11 : 11.0 €
+Alter 12 : 13.0 €
+Alter 13 : 15.0 €
+Alter 14 : 17.0 €
+Alter 15 : 19.0 €
+Alter 16 : 21.0 €
+Alter 17 : 23.0 €
+Alter 18 : 25.0 €
+Alter 19 : 27.0 €
+Alter 20 : 29.0 €
+Alter 21 : 31.0 €</code></pre>
+</div>
+</div>
+<p><a href="Aufgaben-FOR-Schleife_files/figure-html/cell-3-1-73ce9ef3-dce1-4ce2-8bd9-d26b1369a823.png">Struktogramm</a></p>
 </section>
-<section id="einführung-in-programmierung-mit-python" class="level2">
-<h2 class="anchored" data-anchor-id="einführung-in-programmierung-mit-python">Einführung in Programmierung mit python</h2>
-<p>Ab jetzt werden wir unsere Aufgaben in der Programmierumgebung Jupyter unter <a href="https://inf.mws-tuebingen.de">https://inf.mws-tuebingen.de</a> lösen.<br>
-Die Zugangsdaten bekommen Sie im Unterricht.</p>
-<p>Für die Struktogramme verwenden wir diesen <a href="https://struktogrammer.mws-tuebingen.de/">Struktogramm-Editor online</a></p>
-<section id="einführung-in-jupyter" class="level3">
-<h3 class="anchored" data-anchor-id="einführung-in-jupyter">Einführung in jupyter</h3>
-<p>Speichern Sie das folgende Arbeitsblatt am PC, laden Sie es auf den jupyter-Server hoch und bearbeiten Sie es.</p>
-<p><a href="00_Einführung-in-Jupyter.ipynb">00_Einführung-in-Jupyter.ipynb</a></p>
-</section>
-<section id="ausgabe-von-zeichen-mit-print" class="level3">
-<h3 class="anchored" data-anchor-id="ausgabe-von-zeichen-mit-print">Ausgabe von Zeichen mit print</h3>
-<p><a href="01_Ausgabe_von_Zeichen_mit_print.html">Arbeitsblatt</a></p>
-<p><a href="01-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="variablen-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-in-python">Variablen in python</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jfOLXKPGXJ0?si=LA7XFWP73iiQsSDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1WqFJ5wsA4o?si=CTq3iZ_p47JFZYlj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-</section>
-<section id="variablen-als-zeichenkette" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-zeichenkette">Variablen als Zeichenkette</h3>
-<p><a href="02_Variablen_Zeichenkette.html">Arbeitsblatt</a></p>
-</section>
-<section id="variablen-als-zahl" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-zahl">Variablen als Zahl</h3>
-<p><a href="03_Variable_als_Zahl.html">Arbeitsblatt</a></p>
-</section>
-<section id="variablen-als-wahrheitswert" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-wahrheitswert">Variablen als Wahrheitswert</h3>
-<p><a href="04_Variable_als_Wahrheitswert.html">Arbeitsblatt</a></p>
-<p><a href="04-Variablen-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="rechenoperatoren" class="level3">
-<h3 class="anchored" data-anchor-id="rechenoperatoren">Rechenoperatoren</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XKFQ2_et5k8?si=rC450opLlxx2siJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="05_Rechenoperatoren.html">Arbeitsblatt</a></p>
-<p><a href="05-Rechenoperatoren-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="ein--und-ausgabe-von-zeichenketten-und-zahlen" class="level3">
-<h3 class="anchored" data-anchor-id="ein--und-ausgabe-von-zeichenketten-und-zahlen">Ein- und Ausgabe von Zeichenketten und Zahlen</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/I9h1c-121Uk?si=tEj0NOI_5o6dTdx3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="06_Ein-und-Ausgabe-Zeichenketten.html">Ein- und Ausgabe von Zecihenketten</a></p>
-<p><a href="07-Ein-und-Ausgabe-Zahlen.html">Ein- und Ausgabe von Zahlen</a></p>
-<p><a href="071-Aufgabe-LSG.html">Übung 1</a></p>
-<p><a href="072-Aufgabe-LSG.html">Übung 2</a></p>
-<section id="für-die-schnellen" class="level4">
-<h4 class="anchored" data-anchor-id="für-die-schnellen">Für die Schnellen</h4>
-<p>Chapter 5, S. 41-45</p>
-<p><a href="https://inventwithpython.com/inventwithpython_3rd.pdf">Link zum Buch</a></p>
-</section>
-</section>
-<section id="funktionen-oder-unterprogramme-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="funktionen-oder-unterprogramme-in-python">Funktionen oder Unterprogramme in python</h3>
-<p><a href="Funktionen-ohne-Parameter.html">Funktionen ohne Parameter</a></p>
-<p><a href="Funktionen-mit-Parameter.html">Funktionen mit Parameter</a></p>
-<p><a href="Aufgabe-Funktionen-mit-ohne-Parameter.html">Übung</a></p>
-<p><a href="10_Funktionen-mit-Rückgabewert.html">Funktionen mit Rückgabewert</a></p>
-<p><a href="Aufgaben-Funktionen-mit-Rueckgabewert.html">Übung</a></p>
-<section id="für-die-schnellen-1" class="level4">
-<h4 class="anchored" data-anchor-id="für-die-schnellen-1">Für die Schnellen</h4>
-<p>Chapter 6, S. 46-61</p>
-<p><a href="https://inventwithpython.com/inventwithpython_3rd.pdf">Link zum Buch</a></p>
-</section>
-</section>
-<section id="if-anweisung" class="level3">
-<h3 class="anchored" data-anchor-id="if-anweisung">IF-Anweisung</h3>
-<p><a href="IF-Anweisungen.html">Ein- und zweiseitige IF-Anweisungen</a></p>
-<p><a href="Aufgaben-IF-Anweisungen.html">Übung</a></p>
-<p><a href="geschachtelte-IF-Anweisung.html">Geschachtelte IF-Anweisung</a></p>
-<p><a href="Aufgabe-geschachtelte-IF.html">Übung</a></p>
-<p><a href="verknuepfte-Bedingungen.html">Verknüpfte Bedingungen</a></p>
-<p><a href="Aufgaben-verknuepfte-Bedingungen.html">Übung</a></p>
-</section>
-<section id="for-schleife-zählerschleife" class="level3">
-<h3 class="anchored" data-anchor-id="for-schleife-zählerschleife">FOR-Schleife (Zählerschleife)</h3>
-<p><a href="15_FOR-Schleife.html">FOR-Schleife</a></p>
-<p><a href="Aufgaben-FOR-Schleife.html">Übung</a></p>
-</section>
+<section id="aufgabe---finanzplan" class="level1">
+<h1>Aufgabe - Finanzplan</h1>
+<p>In diesem Projekt soll überprüft werden, welchen Zielwert eine Finanzanlage, die zu einem bestimmten Zinssatz für eine bestimme Anlagedauer (in Jahren) durch Zinseszins-Vermehrung erreicht. Für jedes Jahr, die die Finanzanlage läuft, soll der Wert am Ende des Jahres ausgegeben werden.</p>
+<div id="cell-5" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>betrag <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Betrag: "</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>zinssatz <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Zinssatz: "</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>jahre <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Laufzeit in Jahren: "</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> jahr <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, jahre <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    betrag <span class="op">=</span> betrag <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> zinssatz<span class="op">/</span><span class="dv">100</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span> (<span class="st">"Jahr"</span>, jahr, <span class="st">":"</span>, betrag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdin">
+<pre><code>Betrag:  10000
+Zinssatz:  2
+Laufzeit in Jahren:  4</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jahr 1 : 10200.0
+Jahr 2 : 10404.0
+Jahr 3 : 10612.08
+Jahr 4 : 10824.3216</code></pre>
+</div>
+</div>
+<p><a href="Aufgaben-FOR-Schleife_files/figure-html/cell-6-1-7f26a608-7491-4820-8e65-6ad00bfea030.png">Struktogramm</a></p>
 </section>
 
 </main>
