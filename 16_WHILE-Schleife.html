@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Unterrichtsmaterial zum Informatikkurs J1 im SJ2425</title>
+<title>While-Schleife</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,19 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="16_WHILE-Schleife_files/libs/clipboard/clipboard.min.js"></script>
+<script src="16_WHILE-Schleife_files/libs/quarto-html/quarto.js"></script>
+<script src="16_WHILE-Schleife_files/libs/quarto-html/popper.min.js"></script>
+<script src="16_WHILE-Schleife_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="16_WHILE-Schleife_files/libs/quarto-html/anchor.min.js"></script>
+<link href="16_WHILE-Schleife_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="16_WHILE-Schleife_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="16_WHILE-Schleife_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="16_WHILE-Schleife_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="16_WHILE-Schleife_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -45,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Unterrichtsmaterial zum Informatikkurs J1 im SJ2425</h1>
+<h1 class="title">While-Schleife</h1>
 </div>
 
 
@@ -62,118 +96,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="datenbanken" class="level2">
-<h2 class="anchored" data-anchor-id="datenbanken">Datenbanken</h2>
-<p>Im Unterricht wird <a href="https://sql.hauptquartier.eu/">folgendes Spiel</a> gespielt.</p>
-<p>Die Schüler bearbeiten alle Aufgaben und speichern die Lösungen auf einem Whiteboard zu dem jeweiligen Kurs.</p>
-<p>Für die SQL-Abfragen wird <a href="https://sqlitebrowser.org/">SQLiteBrowser</a> verwendet.</p>
-<p>Die Datenbankdatei zum Spiel kann man <a href="https://sql.hauptquartier.eu/_sqlite_manager/maulwurfstadtDB.db.zip">hier</a> downloaden.</p>
-<p><a href="Vorbereitung-KA1.html">Vorbereitung auf die KA-1</a></p>
+<p>In manchen Fällen muss ein Programm immer wieder die gleichen Anweisungen viele Male hintereinander ausführen, bis ein bestimmtes Ergebnis eintritt. Wie oft man diese Anweisungen wiederholen muss, hängt dabei von einer Bedingung ab, welche am Anfang, bevor die Anweisungen ausgeführt werden, überprüft wird. Solche Wiederholungen nennt man auch Schleifen. Ist die Anzahl der Schleifendurchläufe vor dem Beginn des Programms nicht exakt bekannt, benutzt man eine <strong>while-Schleife</strong>.</p>
+<p>Das folgende Programm simuliert einen Würfelvorgang und würfelt solange, bis eine 6 gewürfelt wurde:</p>
+<div id="cell-2" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>zufallszahl <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> zufallszahl <span class="op">!=</span> <span class="dv">6</span>:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    zufallszahl <span class="op">=</span> randint(<span class="dv">1</span>, <span class="dv">6</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span> (<span class="st">"Wurf:"</span>, zufallszahl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Wurf: 4
+Wurf: 2
+Wurf: 2
+Wurf: 6</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Hinweis:</strong> In diesem Programm kommen zwei Anweisungen vor, die benötigt werden, weil mit Zufallszahlen gearbeitet werden soll: In Zeile 1 wird ein Modul in das Programm eingebunden, das Zufallszahlenfunktionalität zur Verfügung stellt, in Zeile 4 wird dann eine Funktion des Moduls genutzt, die Funktion randint(1, 6), die eine ganzzahlige Zufallszahl aus dem Bereich 1 bis 6 erzeugt.</p>
+</blockquote>
+<section id="erklärung-des-programmablaufs" class="level2">
+<h2 class="anchored" data-anchor-id="erklärung-des-programmablaufs">Erklärung des Programmablaufs:</h2>
+<p>In Zeile 2 erhält die Variable zufallszahl den Wert 0. Dann wird in einer while-Schleife der Variablen zufallszahl solange ein Zufallswert im Wertebereich von 1 bis 6 zugewiesen, bis zufallszahl=6 ist. Bei jedem Durchlauf wird der jeweilige Wert von zufallszahl ausgegeben. ## Aufbau der while-Schleife in Python: Eine while-Schleife wird in Python mit dem Schlüsselwort <strong>while</strong> eingeleitet. Danach folgt die Bedingung, die erfüllt sein muss, damit die Schleife wiederholt wird, d.h. die Schleife wird wiederholt, solange die Bedingung erfüllt ist (hier im Beispiel: solange zufallszahl ungleich 6 ist). Abschließend folgt ein Doppelpunkt, und unter dem Doppelpunkt stehen eingerückt alle Anweisungen, die im Rahmen der Schleife ausgeführt werden sollen.</p>
 </section>
-<section id="einführung-in-programmierung-mit-python" class="level2">
-<h2 class="anchored" data-anchor-id="einführung-in-programmierung-mit-python">Einführung in Programmierung mit python</h2>
-<p>Ab jetzt werden wir unsere Aufgaben in der Programmierumgebung Jupyter unter <a href="https://inf.mws-tuebingen.de">https://inf.mws-tuebingen.de</a> lösen.<br>
-Die Zugangsdaten bekommen Sie im Unterricht.</p>
-<p>Für die Struktogramme verwenden wir diesen <a href="https://struktogrammer.mws-tuebingen.de/">Struktogramm-Editor online</a></p>
-<section id="einführung-in-jupyter" class="level3">
-<h3 class="anchored" data-anchor-id="einführung-in-jupyter">Einführung in jupyter</h3>
-<p>Speichern Sie das folgende Arbeitsblatt am PC, laden Sie es auf den jupyter-Server hoch und bearbeiten Sie es.</p>
-<p><a href="00_Einführung-in-Jupyter.ipynb">00_Einführung-in-Jupyter.ipynb</a></p>
-</section>
-<section id="ausgabe-von-zeichen-mit-print" class="level3">
-<h3 class="anchored" data-anchor-id="ausgabe-von-zeichen-mit-print">Ausgabe von Zeichen mit print</h3>
-<p><a href="01_Ausgabe_von_Zeichen_mit_print.html">Arbeitsblatt</a></p>
-<p><a href="01-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="variablen-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-in-python">Variablen in python</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jfOLXKPGXJ0?si=LA7XFWP73iiQsSDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1WqFJ5wsA4o?si=CTq3iZ_p47JFZYlj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-</section>
-<section id="variablen-als-zeichenkette" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-zeichenkette">Variablen als Zeichenkette</h3>
-<p><a href="02_Variablen_Zeichenkette.html">Arbeitsblatt</a></p>
-</section>
-<section id="variablen-als-zahl" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-zahl">Variablen als Zahl</h3>
-<p><a href="03_Variable_als_Zahl.html">Arbeitsblatt</a></p>
-</section>
-<section id="variablen-als-wahrheitswert" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-wahrheitswert">Variablen als Wahrheitswert</h3>
-<p><a href="04_Variable_als_Wahrheitswert.html">Arbeitsblatt</a></p>
-<p><a href="04-Variablen-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="rechenoperatoren" class="level3">
-<h3 class="anchored" data-anchor-id="rechenoperatoren">Rechenoperatoren</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XKFQ2_et5k8?si=rC450opLlxx2siJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="05_Rechenoperatoren.html">Arbeitsblatt</a></p>
-<p><a href="05-Rechenoperatoren-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="ein--und-ausgabe-von-zeichenketten-und-zahlen" class="level3">
-<h3 class="anchored" data-anchor-id="ein--und-ausgabe-von-zeichenketten-und-zahlen">Ein- und Ausgabe von Zeichenketten und Zahlen</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/I9h1c-121Uk?si=tEj0NOI_5o6dTdx3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="06_Ein-und-Ausgabe-Zeichenketten.html">Ein- und Ausgabe von Zecihenketten</a></p>
-<p><a href="07-Ein-und-Ausgabe-Zahlen.html">Ein- und Ausgabe von Zahlen</a></p>
-<p><a href="071-Aufgabe-LSG.html">Übung 1</a></p>
-<p><a href="072-Aufgabe-LSG.html">Übung 2</a></p>
-<section id="für-die-schnellen" class="level4">
-<h4 class="anchored" data-anchor-id="für-die-schnellen">Für die Schnellen</h4>
-<p>Chapter 5, S. 41-45</p>
-<p><a href="https://inventwithpython.com/inventwithpython_3rd.pdf">Link zum Buch</a></p>
-</section>
-</section>
-<section id="funktionen-oder-unterprogramme-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="funktionen-oder-unterprogramme-in-python">Funktionen oder Unterprogramme in python</h3>
-<p><a href="Funktionen-ohne-Parameter.html">Funktionen ohne Parameter</a></p>
-<p><a href="Funktionen-mit-Parameter.html">Funktionen mit Parameter</a></p>
-<p><a href="Aufgabe-Funktionen-mit-ohne-Parameter.html">Übung</a></p>
-<p><a href="10_Funktionen-mit-Rückgabewert.html">Funktionen mit Rückgabewert</a></p>
-<p><a href="Aufgaben-Funktionen-mit-Rueckgabewert.html">Übung</a></p>
-<section id="für-die-schnellen-1" class="level4">
-<h4 class="anchored" data-anchor-id="für-die-schnellen-1">Für die Schnellen</h4>
-<p>Chapter 6, S. 46-61</p>
-<p><a href="https://inventwithpython.com/inventwithpython_3rd.pdf">Link zum Buch</a></p>
-</section>
-</section>
-<section id="if-anweisung" class="level3">
-<h3 class="anchored" data-anchor-id="if-anweisung">IF-Anweisung</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ucsv_Nhhxmk?si=lBtkB3vpVjhgmNC2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b6KzYbM-Hvg?si=pLTeaDKV4GhUli4F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="IF-Anweisungen.html">Ein- und zweiseitige IF-Anweisungen</a></p>
-<p><a href="Aufgaben-IF-Anweisungen.html">Übung</a></p>
-<p><a href="geschachtelte-IF-Anweisung.html">Geschachtelte IF-Anweisung</a></p>
-<p><a href="Aufgabe-geschachtelte-IF.html">Übung</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/075l6R42tkQ?si=_1ZhlHlfR6d-RYD5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="verknuepfte-Bedingungen.html">Verknüpfte Bedingungen</a></p>
-<p><a href="Aufgaben-verknuepfte-Bedingungen.html">Übung</a></p>
-</section>
-<section id="for-schleife-zählerschleife" class="level3">
-<h3 class="anchored" data-anchor-id="for-schleife-zählerschleife">FOR-Schleife (Zählerschleife)</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pQh5Idw2sKM?si=JVMiuW9Qr6Yh5Foy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="15_FOR-Schleife.html">FOR-Schleife</a></p>
-<p><a href="Aufgaben-FOR-Schleife.html">Übung</a></p>
-</section>
-<section id="while-schleife-wiederholschleife" class="level3">
-<h3 class="anchored" data-anchor-id="while-schleife-wiederholschleife">WHILE-Schleife (Wiederholschleife)</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sXLicTuJzB4?si=f3JOXu7AMXamwcfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="16_WHILE-Schleife.html">WHILE-Schleife</a></p>
-<p><a href="16-Aufgaben-WHILE.html">Übung</a></p>
-</section>
-<section id="vorbereitung-auf-die-klassenarbeit" class="level3">
-<h3 class="anchored" data-anchor-id="vorbereitung-auf-die-klassenarbeit">Vorbereitung auf die Klassenarbeit</h3>
-<p><a href="Funktionen-Vertiefung.html">Funktionen: Vertiefung</a></p>
-<p><a href="">Schleifen: Vertiefung</a></p>
-<p><a href="">Übung</a></p>
-</section>
+<section id="struktogramm" class="level1">
+<h1>Struktogramm:</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="16_WHILE-Schleife_files/figure-html/cell-6-1-6c53a1c7-9c71-408b-84d5-89cb9d48cebc.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<p>Andererseits lässt sich jede for-Schleife auch in eine while-Schleife übertragen. Wir vergleichen das Beispiel der for-Schleife aus der letzten Einheit mit der Umsetzung als while-Schleife. Anwendungsbeispiel: Es soll ein Programm geschrieben werden, das die 5er-Reihe von 5 bis 50 ausgibt:</p>
+<div id="cell-8" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 1 (FOR-Schleife)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> zahl <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    produkt <span class="op">=</span> zahl <span class="op">*</span> <span class="dv">5</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(zahl, <span class="st">"mal 5 ="</span>, produkt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 mal 5 = 5
+2 mal 5 = 10
+3 mal 5 = 15
+4 mal 5 = 20
+5 mal 5 = 25
+6 mal 5 = 30
+7 mal 5 = 35
+8 mal 5 = 40
+9 mal 5 = 45
+10 mal 5 = 50</code></pre>
+</div>
+</div>
+<div id="cell-9" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 2 (WHILE-Schleife)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> zahl <span class="op">&lt;</span> <span class="dv">11</span>:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>   produkt <span class="op">=</span> zahl <span class="op">*</span> <span class="dv">5</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(zahl, <span class="st">"mal 5 ="</span>, produkt)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>   zahl <span class="op">=</span> zahl <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 mal 5 = 5
+2 mal 5 = 10
+3 mal 5 = 15
+4 mal 5 = 20
+5 mal 5 = 25
+6 mal 5 = 30
+7 mal 5 = 35
+8 mal 5 = 40
+9 mal 5 = 45
+10 mal 5 = 50</code></pre>
+</div>
+</div>
+<p>Im Vergleich ist ein wesentlicher Unterschied festzustellen:<br>
+In der for-Schleife greifen wir auf eine festgelegte Zahlenliste zurück. Diese nutzen wir bei der while-Schleife nicht. Daher muss dort der Zähler zunächst deklariert und initialisiert werden. Ebenso muss in der while-Schleife der Zähler manuell verändert werden.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="16_WHILE-Schleife_files/figure-html/cell-11-1-6b7f7ff9-47e2-4efe-ae55-e9bc8b33c1c5.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
 </section>
 
 </main>
