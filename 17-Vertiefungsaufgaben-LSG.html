@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Unterrichtsmaterial zum Informatikkurs J1 im SJ2425</title>
+<title>Aufgabe 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,19 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="17-Vertiefungsaufgaben-LSG_files/libs/clipboard/clipboard.min.js"></script>
+<script src="17-Vertiefungsaufgaben-LSG_files/libs/quarto-html/quarto.js"></script>
+<script src="17-Vertiefungsaufgaben-LSG_files/libs/quarto-html/popper.min.js"></script>
+<script src="17-Vertiefungsaufgaben-LSG_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="17-Vertiefungsaufgaben-LSG_files/libs/quarto-html/anchor.min.js"></script>
+<link href="17-Vertiefungsaufgaben-LSG_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="17-Vertiefungsaufgaben-LSG_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="17-Vertiefungsaufgaben-LSG_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="17-Vertiefungsaufgaben-LSG_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="17-Vertiefungsaufgaben-LSG_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -45,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Unterrichtsmaterial zum Informatikkurs J1 im SJ2425</h1>
+<h1 class="title">Aufgabe 1</h1>
 </div>
 
 
@@ -62,118 +96,196 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="datenbanken" class="level2">
-<h2 class="anchored" data-anchor-id="datenbanken">Datenbanken</h2>
-<p>Im Unterricht wird <a href="https://sql.hauptquartier.eu/">folgendes Spiel</a> gespielt.</p>
-<p>Die Schüler bearbeiten alle Aufgaben und speichern die Lösungen auf einem Whiteboard zu dem jeweiligen Kurs.</p>
-<p>Für die SQL-Abfragen wird <a href="https://sqlitebrowser.org/">SQLiteBrowser</a> verwendet.</p>
-<p>Die Datenbankdatei zum Spiel kann man <a href="https://sql.hauptquartier.eu/_sqlite_manager/maulwurfstadtDB.db.zip">hier</a> downloaden.</p>
-<p><a href="Vorbereitung-KA1.html">Vorbereitung auf die KA-1</a></p>
-</section>
-<section id="einführung-in-programmierung-mit-python" class="level2">
-<h2 class="anchored" data-anchor-id="einführung-in-programmierung-mit-python">Einführung in Programmierung mit python</h2>
-<p>Ab jetzt werden wir unsere Aufgaben in der Programmierumgebung Jupyter unter <a href="https://inf.mws-tuebingen.de">https://inf.mws-tuebingen.de</a> lösen.<br>
-Die Zugangsdaten bekommen Sie im Unterricht.</p>
-<p>Für die Struktogramme verwenden wir diesen <a href="https://struktogrammer.mws-tuebingen.de/">Struktogramm-Editor online</a></p>
-<section id="einführung-in-jupyter" class="level3">
-<h3 class="anchored" data-anchor-id="einführung-in-jupyter">Einführung in jupyter</h3>
-<p>Speichern Sie das folgende Arbeitsblatt am PC, laden Sie es auf den jupyter-Server hoch und bearbeiten Sie es.</p>
-<p><a href="00_Einführung-in-Jupyter.ipynb">00_Einführung-in-Jupyter.ipynb</a></p>
-</section>
-<section id="ausgabe-von-zeichen-mit-print" class="level3">
-<h3 class="anchored" data-anchor-id="ausgabe-von-zeichen-mit-print">Ausgabe von Zeichen mit print</h3>
-<p><a href="01_Ausgabe_von_Zeichen_mit_print.html">Arbeitsblatt</a></p>
-<p><a href="01-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="variablen-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-in-python">Variablen in python</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jfOLXKPGXJ0?si=LA7XFWP73iiQsSDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1WqFJ5wsA4o?si=CTq3iZ_p47JFZYlj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-</section>
-<section id="variablen-als-zeichenkette" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-zeichenkette">Variablen als Zeichenkette</h3>
-<p><a href="02_Variablen_Zeichenkette.html">Arbeitsblatt</a></p>
-</section>
-<section id="variablen-als-zahl" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-zahl">Variablen als Zahl</h3>
-<p><a href="03_Variable_als_Zahl.html">Arbeitsblatt</a></p>
-</section>
-<section id="variablen-als-wahrheitswert" class="level3">
-<h3 class="anchored" data-anchor-id="variablen-als-wahrheitswert">Variablen als Wahrheitswert</h3>
-<p><a href="04_Variable_als_Wahrheitswert.html">Arbeitsblatt</a></p>
-<p><a href="04-Variablen-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="rechenoperatoren" class="level3">
-<h3 class="anchored" data-anchor-id="rechenoperatoren">Rechenoperatoren</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XKFQ2_et5k8?si=rC450opLlxx2siJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="05_Rechenoperatoren.html">Arbeitsblatt</a></p>
-<p><a href="05-Rechenoperatoren-Aufgabe-LSG.html">Übungsblatt</a></p>
-</section>
-<section id="ein--und-ausgabe-von-zeichenketten-und-zahlen" class="level3">
-<h3 class="anchored" data-anchor-id="ein--und-ausgabe-von-zeichenketten-und-zahlen">Ein- und Ausgabe von Zeichenketten und Zahlen</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/I9h1c-121Uk?si=tEj0NOI_5o6dTdx3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="06_Ein-und-Ausgabe-Zeichenketten.html">Ein- und Ausgabe von Zecihenketten</a></p>
-<p><a href="07-Ein-und-Ausgabe-Zahlen.html">Ein- und Ausgabe von Zahlen</a></p>
-<p><a href="071-Aufgabe-LSG.html">Übung 1</a></p>
-<p><a href="072-Aufgabe-LSG.html">Übung 2</a></p>
-<section id="für-die-schnellen" class="level4">
-<h4 class="anchored" data-anchor-id="für-die-schnellen">Für die Schnellen</h4>
-<p>Chapter 5, S. 41-45</p>
-<p><a href="https://inventwithpython.com/inventwithpython_3rd.pdf">Link zum Buch</a></p>
+<p>Erstellen Sie ein Programm, das solange nach einem PIN-Code fragt, bis die PIN richtig eingegeben wird. Nach der richtigen Eingabe erscheint eine Meldung „Ihnen werden 1000 EUR überwiesen“</p>
+<div id="cell-2" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pin_richtig <span class="op">=</span> <span class="dv">1234</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pin_benutzer <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Bitte Ihren PIN-Code eingeben"</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> pin_richtig <span class="op">!=</span> pin_benutzer:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ihre PIN ist leider falsch."</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    pin_benutzer <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Bitte Ihren PIN-Code eingeben"</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ihnen werden 1000 EUR überwiesen"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdin">
+<pre><code>Bitte Ihren PIN-Code eingeben 1234</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ihnen werden 1000 EUR überwiesen</code></pre>
+</div>
+</div>
+<section id="aufgabe-2" class="level1">
+<h1>Aufgabe 2</h1>
+<p>Erstellen Sie ein Programm mit dem Namen <code>ratemal</code>. Dieses Programm erzeugt eine Zufallszahl im Bereich (1,100). Der Benutzer des Programms soll diese Zahl mit möglichst wenigen Versuchen raten. Nach jedem Versuch bekommt der Benutzer die Information, ob die geratene Zahl größer, kleiner oder gleich der gesuchten Zahl ist.</p>
+<p>HINWEIS: Eine Zufallszahl (z) im Bereich (u,o) kann man mit folgendem Befehl erzeugen:</p>
+<div id="cell-4" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="co">#aktiviert das random-Modul</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>z<span class="op">=</span>random.randint(u,o) <span class="co">#erzeugt eine ganzzahlige Zufallszahl zwischen u und o</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-5" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>z<span class="op">=</span>random.randint(<span class="dv">1</span>,<span class="dv">100</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>z_benutzer <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Bitte eine Zahl eingeben:"</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> z <span class="op">!=</span> z_benutzer:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> z <span class="op">&gt;</span> z_benutzer:</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Die Zahl ist kleiner"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>: </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Die Zahl ist größer"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gewonnen!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="aufgabe-2.1" class="level3">
+<h3 class="anchored" data-anchor-id="aufgabe-2.1">Aufgabe 2.1</h3>
+<p>Wie viele Versuche hat der Benutzer gebraucht, um die Zahl zu erraten? Programmieren Sie die Ausgabe von Anzahl der Versuche.</p>
 </section>
 </section>
-<section id="funktionen-oder-unterprogramme-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="funktionen-oder-unterprogramme-in-python">Funktionen oder Unterprogramme in python</h3>
-<p><a href="Funktionen-ohne-Parameter.html">Funktionen ohne Parameter</a></p>
-<p><a href="Funktionen-mit-Parameter.html">Funktionen mit Parameter</a></p>
-<p><a href="Aufgabe-Funktionen-mit-ohne-Parameter.html">Übung</a></p>
-<p><a href="10_Funktionen-mit-Rückgabewert.html">Funktionen mit Rückgabewert</a></p>
-<p><a href="Aufgaben-Funktionen-mit-Rueckgabewert.html">Übung</a></p>
-<section id="für-die-schnellen-1" class="level4">
-<h4 class="anchored" data-anchor-id="für-die-schnellen-1">Für die Schnellen</h4>
-<p>Chapter 6, S. 46-61</p>
-<p><a href="https://inventwithpython.com/inventwithpython_3rd.pdf">Link zum Buch</a></p>
-</section>
-</section>
-<section id="if-anweisung" class="level3">
-<h3 class="anchored" data-anchor-id="if-anweisung">IF-Anweisung</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ucsv_Nhhxmk?si=lBtkB3vpVjhgmNC2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b6KzYbM-Hvg?si=pLTeaDKV4GhUli4F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="IF-Anweisungen.html">Ein- und zweiseitige IF-Anweisungen</a></p>
-<p><a href="Aufgaben-IF-Anweisungen.html">Übung</a></p>
-<p><a href="geschachtelte-IF-Anweisung.html">Geschachtelte IF-Anweisung</a></p>
-<p><a href="Aufgabe-geschachtelte-IF.html">Übung</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/075l6R42tkQ?si=_1ZhlHlfR6d-RYD5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="verknuepfte-Bedingungen.html">Verknüpfte Bedingungen</a></p>
-<p><a href="Aufgaben-verknuepfte-Bedingungen.html">Übung</a></p>
-</section>
-<section id="for-schleife-zählerschleife" class="level3">
-<h3 class="anchored" data-anchor-id="for-schleife-zählerschleife">FOR-Schleife (Zählerschleife)</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pQh5Idw2sKM?si=JVMiuW9Qr6Yh5Foy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="15_FOR-Schleife.html">FOR-Schleife</a></p>
-<p><a href="Aufgaben-FOR-Schleife.html">Übung</a></p>
-</section>
-<section id="while-schleife-wiederholschleife" class="level3">
-<h3 class="anchored" data-anchor-id="while-schleife-wiederholschleife">WHILE-Schleife (Wiederholschleife)</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sXLicTuJzB4?si=f3JOXu7AMXamwcfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="16_WHILE-Schleife.html">WHILE-Schleife</a></p>
-<p><a href="16-Aufgaben-WHILE.html">Übung</a></p>
-</section>
-<section id="vorbereitung-auf-die-klassenarbeit" class="level3">
-<h3 class="anchored" data-anchor-id="vorbereitung-auf-die-klassenarbeit">Vorbereitung auf die Klassenarbeit</h3>
-<p><a href="Funktionen-Vertiefung.html">Funktionen: Vertiefung</a></p>
-<p><a href="17-Vertiefungsaufgaben-LSG.html">Schleifen: Vertiefung</a></p>
-<p><a href="">Übung</a></p>
-</section>
+<section id="aufgabe-3" class="level1">
+<h1>Aufgabe 3</h1>
+<p>3n+1 – Problem (Achterbahnzahlen):<br>
+Die 1. Zahl einer Zahlenreihe ist ein gegebener Startwert (=n)<br>
+Die jeweils nächste Zahl wird aus der letzten Zahl gemäß folgender Regel gebildet:<br>
+Falls die letzte Zahl gerade war, wird sie durch 2 geteilt. Das Ergebnis ist dann die nächste Zahl.<br>
+Falls die letzte Zahl ungerade war, wird sie mit 3 multipliziert und anschließend 1 addiert. Das Ergebnis ist dann die nächste Zahl.</p>
+<blockquote class="blockquote">
+<p><strong>Beispiel: n=5</strong> 1) 5-ungerade 3<em>5+1=16<br>
+2) 16-gerade 16/2=8<br>
+3) 8-gerade 8/2=4<br>
+4) 4-gerade 4/2=2<br>
+5) 2-gerade 2/2=1<br>
+6) 1-ungerade 3</em>1+1=4<br>
+usw.</p>
+</blockquote>
+<p>Erstellen Sie eine Funktion achterbahn(n), die diese Zahlenfolge berechnet.<br>
+Limitieren Sie die Iterationszahl (z.B. iz=100).</p>
+<div id="cell-8" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> achterbahn(n):</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    zahlen <span class="op">=</span> [n]</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    iz <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(iz):</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> zahlen[<span class="bu">len</span>(zahlen)<span class="op">-</span><span class="dv">1</span>] <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>            zahlen.append(zahlen[<span class="bu">len</span>(zahlen)<span class="op">-</span><span class="dv">1</span>] <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            zahlen.append(zahlen[<span class="bu">len</span>(zahlen)<span class="op">-</span><span class="dv">1</span>] <span class="op">*</span> <span class="dv">3</span> <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> zahlen</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>achterbahn(<span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>[200,
+ 100.0,
+ 50.0,
+ 25.0,
+ 76.0,
+ 38.0,
+ 19.0,
+ 58.0,
+ 29.0,
+ 88.0,
+ 44.0,
+ 22.0,
+ 11.0,
+ 34.0,
+ 17.0,
+ 52.0,
+ 26.0,
+ 13.0,
+ 40.0,
+ 20.0,
+ 10.0,
+ 5.0,
+ 16.0,
+ 8.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0,
+ 1.0,
+ 4.0,
+ 2.0]</code></pre>
+</div>
+</div>
 </section>
 
 </main>
