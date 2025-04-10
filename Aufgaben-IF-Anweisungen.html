@@ -69,6 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="Aufgaben-IF-Anweisungen_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="fullcontent">
@@ -99,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In diesem Projekt soll überprüft werden, welcher Betrag zu zahlen ist, wenn eine Karte für den Abiball 30,00 Euro kostet und für Bestellungen von drei oder mehr Karten ein Rabatt von 20% gewährt wird.</p>
 <div id="89c5d67e-033f-44e0-b4da-daeafb1c956e" class="cell" data-execution_count="6">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">40</span><span class="op">*</span><span class="st">"-"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Berechnung des Preises für Abikarten"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">40</span><span class="op">*</span><span class="st">"-"</span>)</span>
@@ -125,7 +126,7 @@ Der Preis für die Karten beträgt: 72.0 €</code></pre>
 <p>In diesem Projekt können Gebote für einen zum Kauf angebotenen Artikel abgegeben werden. In dem Programmcode ist der Mindestpreis (hier 24.99) hinterlegt. Ist der von dem Anwender vorgeschlagene Kaufpreis geringer, wird der Text „Ihr Angebotspreis liegt unterhalb des Mindestpreises!“ ausgegeben. Andernfalls erscheint der Text „Herzlichen Glückwunsch, Sie haben den Artikel erworben!“.</p>
 <div id="4abec861-109a-46da-b205-127b830d0a9c" class="cell" data-execution_count="5">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>preis <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Wieviel wollen Sie zahlen? "</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> preis <span class="op">&lt;</span> <span class="fl">24.99</span>:</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ihr Angebotspreis liegt unterhalb des Mindestpreises!"</span>)</span>

@@ -69,6 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="Vorbereitung-KA1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="fullcontent">
@@ -98,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="cell-1" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="op">%</span>load_ext sql</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="op">%</span>sql  sqlite:<span class="op">///</span>buecherei.db</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -117,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="gebe-die-liste-aller-autoren-aus">1. Gebe die Liste aller Autoren aus</h3>
 <div id="cell-6" class="cell" data-vscode="{&quot;languageId&quot;:&quot;sql&quot;}">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM Autoren<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -127,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="finde-alle-bücher-die-im-jahr-2024-ausgeliehen-wurden">2. Finde alle Bücher, die im Jahr 2024 ausgeliehen wurden</h3>
 <div id="cell-8" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>SELECT Titel, Ausleihdatum FROM Bücher, Ausleihen WHERE Bücher.BuchID <span class="op">=</span> Ausleihen.BuchID AND Ausleihdatum LIKE <span class="st">'2024%'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -137,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="zeige-alle-kategorien-die-mit-fiktion-beginnen">3. Zeige alle Kategorien, die mit ‘Fiktion’ beginnen</h3>
 <div id="cell-10" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM Kategorien WHERE Bezeichnung LIKE <span class="st">'Fiktion%'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -147,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="liste-der-bücher-sortiert-nach-titel-in-aufsteigender-reihenfolge">4. Liste der Bücher, sortiert nach Titel in aufsteigender Reihenfolge</h3>
 <div id="cell-12" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM Bücher ORDER BY Titel ASC<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -157,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="finde-alle-autoren-die-nach-1980-geboren-wurden">5. Finde alle Autoren, die nach 1980 geboren wurden</h3>
 <div id="cell-14" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM Autoren WHERE Geburtsjahr <span class="op">&gt;</span> <span class="dv">1980</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -167,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="liste-der-bücher-mit-den-entsprechenden-autoren">6. Liste der Bücher mit den entsprechenden Autoren</h3>
 <div id="cell-16" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel, Autoren.Name </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>FROM Bücher, Autoren </span>
@@ -179,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="finde-alle-bücher-in-der-kategorie-fantasy">7. Finde alle Bücher in der Kategorie ‘Fantasy’</h3>
 <div id="cell-18" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel, Kategorien.Bezeichnung</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>FROM Bücher, Kategorien </span>
@@ -192,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="liste-der-ausleihen-mit-buchtiteln-und-ausleihdatum">8. Liste der Ausleihen mit Buchtiteln und Ausleihdatum</h3>
 <div id="cell-20" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel, Ausleihen.Ausleihdatum </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>FROM Ausleihen, Bücher </span>
@@ -204,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="finde-alle-bücher-die-von-max-mustermann-geschrieben-wurden">9. Finde alle Bücher, die von ‘Max Mustermann’ geschrieben wurden</h3>
 <div id="cell-22" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>FROM Bücher, Autoren </span>
@@ -217,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="finde-alle-ausleihen-mit-buchtiteln-autoren-und-ausleihdatum">10. Finde alle Ausleihen mit Buchtiteln, Autoren und Ausleihdatum</h3>
 <div id="cell-24" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel, Autoren.Name, Ausleihen.Ausleihdatum </span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>FROM Ausleihen, Bücher, Autoren </span>
@@ -231,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="liste-der-bücher-mit-ihren-kategorien-und-autoren">11. Liste der Bücher mit ihren Kategorien und Autoren</h3>
 <div id="cell-26" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel, Kategorien.Bezeichnung, Autoren.Name </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>FROM Bücher, Kategorien, Autoren </span>
@@ -244,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="finde-alle-bücher-die-in-der-kategorie-kinderbuch-sind-und-von-lisa-koch-geschrieben-wurden">12. Finde alle Bücher, die in der Kategorie ‘Kinderbuch’ sind und von ‘Lisa Koch’ geschrieben wurden</h3>
 <div id="cell-28" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel, Kategorien.Bezeichnung, Autoren.Name</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>FROM Bücher, Kategorien, Autoren </span>
@@ -259,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="finde-alle-ausleihen-von-büchern-die-nach-dem-1.-märz-2024-ausgeliehen-wurden">13. Finde alle Ausleihen von Büchern, die nach dem 1. März 2024 ausgeliehen wurden</h3>
 <div id="cell-30" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel, Ausleihen.Ausleihdatum </span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>FROM Ausleihen, Bücher </span>
@@ -272,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="liste-der-bücher-die-im-märz-2024-ausgeliehen-wurden">14. Liste der Bücher, die im März 2024 ausgeliehen wurden</h3>
 <div id="cell-32" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel, Ausleihen.Ausleihdatum</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>FROM Ausleihen, Bücher </span>
@@ -285,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="finde-alle-autoren-deren-namen-mit-t-beginnen">15. Finde alle Autoren, deren Namen mit ‘T’ beginnen</h3>
 <div id="cell-34" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM Autoren WHERE Name LIKE <span class="st">'T%'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -295,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="liste-der-bücher-die-von-autoren-geschrieben-wurden-die-nach-1990-geboren-wurden">16. Liste der Bücher, die von Autoren geschrieben wurden, die nach 1990 geboren wurden</h3>
 <div id="cell-36" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>SELECT Bücher.Titel </span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>FROM Bücher, Autoren </span>

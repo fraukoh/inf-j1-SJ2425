@@ -69,6 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="Aufgabe-geschachtelte-IF_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="fullcontent">
@@ -99,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Schreiben Sie ein Programm, das den Mietzuschuss in Abhängigkeit vom Mietpreis berechnet. Bei einer Miete von weniger als 500,00 Euro beträgt der Zuschuss 2%. Von 500,00 Euro bis unter 1000,00 Euro beträgt der Zuschuss 5% und ab 1000,00 Euro erhält man einen Zuschuss von 7%.</p>
 <div id="22e0b46c-3d0a-4266-b6b0-f004e05e57a3" class="cell" data-execution_count="1">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>miete <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Bitte Miete eingeben: "</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> miete <span class="op">&lt;</span> <span class="dv">500</span>:</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    zuschuss <span class="op">=</span> miete <span class="op">*</span> <span class="fl">0.02</span>    </span>
@@ -123,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In diesem Projekt soll überprüft werden, ob eine Anmeldung mit einem mittleren Bildungsabschluss an einem beruflichen Gymnasium in Baden-Württemberg möglich ist oder nicht. Die Bedingungen dafür lauten wie folgt: Abschlusszeugnis (Mittlerer Bildungsabschluss) der Realschule, der zweijährigen Berufsfachschule, der Berufsaufbauschule oder der Werkrealschule mit einem Notendurchschnitt von mindestens 3,0 aus Deutsch, Mathematik und Englisch (kein Fach schlechter als Note ausreichend).</p>
 <div id="2fc1e188-648e-411a-835c-42eb4accb95e" class="cell" data-execution_count="2">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>note_deutsch <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Deutschnote: "</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>note_englisch <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Englischnote: "</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>note_mathematik <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Mathematiknote: "</span>))</span>

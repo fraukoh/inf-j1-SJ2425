@@ -69,6 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="17-Vertiefungsaufgaben-LSG_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="fullcontent">
@@ -99,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Erstellen Sie ein Programm, das solange nach einem PIN-Code fragt, bis die PIN richtig eingegeben wird. Nach der richtigen Eingabe erscheint eine Meldung „Ihnen werden 1000 EUR überwiesen“</p>
 <div id="cell-2" class="cell" data-execution_count="3">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pin_richtig <span class="op">=</span> <span class="dv">1234</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pin_benutzer <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Bitte Ihren PIN-Code eingeben"</span>))</span>
@@ -122,15 +123,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Erstellen Sie ein Programm mit dem Namen <code>ratemal</code>. Dieses Programm erzeugt eine Zufallszahl im Bereich (1,100). Der Benutzer des Programms soll diese Zahl mit möglichst wenigen Versuchen raten. Nach jedem Versuch bekommt der Benutzer die Information, ob die geratene Zahl größer, kleiner oder gleich der gesuchten Zahl ist.</p>
 <p>HINWEIS: Eine Zufallszahl (z) im Bereich (u,o) kann man mit folgendem Befehl erzeugen:</p>
 <div id="cell-4" class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="co">#aktiviert das random-Modul</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>z<span class="op">=</span>random.randint(u,o) <span class="co">#erzeugt eine ganzzahlige Zufallszahl zwischen u und o</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <div id="cell-5" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>z<span class="op">=</span>random.randint(<span class="dv">1</span>,<span class="dv">100</span>)</span>
@@ -166,23 +164,22 @@ usw.</p>
 </blockquote>
 <p>Erstellen Sie eine Funktion achterbahn(n), die diese Zahlenfolge berechnet.<br>
 Limitieren Sie die Iterationszahl (z.B. iz=100).</p>
-<div id="cell-8" class="cell" data-execution_count="5">
+<div id="cell-8" class="cell" data-execution_count="2">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> achterbahn(n):</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    zahlen <span class="op">=</span> [n]</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    iz <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(iz):</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> zahlen[<span class="bu">len</span>(zahlen)<span class="op">-</span><span class="dv">1</span>] <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>            zahlen.append(zahlen[<span class="bu">len</span>(zahlen)<span class="op">-</span><span class="dv">1</span>] <span class="op">/</span> <span class="dv">2</span>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            zahlen.append(zahlen[<span class="bu">len</span>(zahlen)<span class="op">-</span><span class="dv">1</span>] <span class="op">*</span> <span class="dv">3</span> <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> zahlen</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>achterbahn(<span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Lösung</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> achterbahn(n):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    zahlen <span class="op">=</span> [n]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    iz <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(iz):</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> zahlen[<span class="bu">len</span>(zahlen)<span class="op">-</span><span class="dv">1</span>] <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            zahlen.append(zahlen[<span class="bu">len</span>(zahlen)<span class="op">-</span><span class="dv">1</span>] <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            zahlen.append(zahlen[<span class="bu">len</span>(zahlen)<span class="op">-</span><span class="dv">1</span>] <span class="op">*</span> <span class="dv">3</span> <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> zahlen</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>achterbahn(<span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[200,
  100.0,
  50.0,

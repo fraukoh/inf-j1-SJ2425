@@ -69,6 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="Aufgabe-Funktionen-mit-ohne-Parameter_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="fullcontent">
@@ -100,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Die Funktion soll keine Parameter entgegennehmen. Sie soll die Kuh auf der Konsole ausgeben.</p>
 <div id="cell-2" class="cell" data-execution_count="5">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_cow():</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"^__^"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"(oo)\_______"</span>)</span>
@@ -126,7 +127,7 @@ Das Unterprogramm zeigt in der Konsole die Fläche A=0.5<em>g</em>h.<br>
 Testen Sie Ihr Unterprogramm indem Sie es aufrufen.</p>
 <div id="cell-5" class="cell" data-execution_count="7">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dreiecksFlaeche(g,h):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    flaeche <span class="op">=</span> <span class="fl">0.5</span><span class="op">*</span>g<span class="op">*</span>h</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Die Fläche beträgt: "</span>, flaeche)</span>
@@ -144,7 +145,7 @@ Testen Sie Ihr Unterprogramm indem Sie es aufrufen.</p>
 <p>Erstellen Sie eine Funktion, die den jährlichen Zinsbetrag berechnet. Die Funktion soll die Parameter Kapital und Zinssatz in Prozent haben.</p>
 <div id="cell-8" class="cell" data-execution_count="11">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> zinsbetrag(kapital, zinssatz):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    zins <span class="op">=</span> kapital <span class="op">*</span> zinssatz<span class="op">/</span><span class="dv">100</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Der Zinsbetrag beträgt: "</span>, zins, <span class="st">"Euro"</span>)</span>
@@ -162,7 +163,7 @@ Testen Sie Ihr Unterprogramm indem Sie es aufrufen.</p>
 <p>Erstellen Sie eine Funktion <strong>cow_say(text)</strong>, die eine ASCII-Kuh mit einer Sprechblase ausgibt. Der übergebene Text soll in der Sprechblase erscheinen.</p>
 <div id="cell-11" class="cell" data-execution_count="11">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cow_say(text): </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Erstelle die Sprechblase</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"----------------"</span>)</span>

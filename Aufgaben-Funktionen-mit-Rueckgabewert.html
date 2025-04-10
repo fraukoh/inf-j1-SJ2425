@@ -69,6 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="Aufgaben-Funktionen-mit-Rueckgabewert_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="fullcontent">
@@ -109,7 +110,7 @@ Geschwindigkeit: 80 km/h</p></li>
 <p>Ihr Programm soll zum Schluss eine benutzerfreundliche Meldung ausgeben: <code>"Für eine Strecke von 250 km mit 80 km/h benötigen Sie: 3.125 Stunden"</code></p>
 <div id="cell-2" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechne_reisezeit(strecke, geschwindigkeit):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    zeit <span class="op">=</span> strecke <span class="op">/</span> geschwindigkeit</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> zeit</span>
@@ -148,7 +149,7 @@ Versandkosten: 12.50 €<br>
 </ol>
 <div id="cell-5" class="cell" data-execution_count="1">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechne_endpreis(preis, rabatt_prozent, versandkosten):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    rabatt_betrag <span class="op">=</span> preis <span class="op">*</span> rabatt_prozent <span class="op">/</span> <span class="dv">100</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> preis <span class="op">-</span> rabatt_betrag <span class="op">+</span> versandkosten</span>
@@ -187,7 +188,7 @@ Den Gesamtwert in Cent zurückgibt</p></li>
 </ol>
 <div id="cell-8" class="cell" data-execution_count="13">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechne_gesamtwert(anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    wert_1c <span class="op">=</span> anzahl_1c</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    wert_2c <span class="op">=</span> anzahl_2c <span class="op">*</span> <span class="dv">2</span></span>
@@ -228,7 +229,7 @@ Umrechnung von 10 Punkten in eine Note</p>
 <p>Ihr Programm soll für jede Umrechnung eine informative Ausgabe liefern.</p>
 <div id="cell-11" class="cell" data-execution_count="6">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> note_zu_punkte(note):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">15</span> <span class="op">-</span> (note <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> <span class="dv">3</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
