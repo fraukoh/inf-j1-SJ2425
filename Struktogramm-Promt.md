@@ -1,0 +1,75 @@
+
+
+``` python
+def test(a,b):
+    if a < b:
+        erg = a + b
+    else:
+        erg = a - b
+    return erg
+
+x = 4
+y = 4.5
+ar = [2,3,4,5]
+laenge = len(ar)
+for i in range(0,laenge):
+    ar[i] = ar[i] + 2
+y = 678
+z = int(input("Geben Sie eine Ganzzahl ein:"))
+k = float(input("Geben Sie eine Dazimalzahl ein:"))
+name = input("Geben Sie ein String ein")
+while x < 10:
+    z = z * 2
+    x = x +1
+    print("Ergebnis:", x, z)
+test(x,y)
+```
+
+    Geben Sie eine Ganzzahl ein: 5
+    Geben Sie eine Dazimalzahl ein: 6
+    Geben Sie ein String ein wrwer
+
+    Ergebnis: 5 10
+    Ergebnis: 6 20
+    Ergebnis: 7 40
+    Ergebnis: 8 80
+    Ergebnis: 9 160
+    Ergebnis: 10 320
+
+    688
+
+{“id”:“ccd30e6d-b537-10b1-1c80-5abf35f7”,“type”:“InsertNode”,“followElement”:{“id”:“92665c36-7e58-88ba-980e-a4658d69”,“type”:“FunctionNode”,“text”:“test”,“parameters”:\[{“pos”:“0”,“parName”:“a”},{“pos”:“3”,“parName”:“b”}\],“followElement”:{“id”:“8157bf7c-3e82-8dbe-f99e-fd59960e”,“type”:“InsertNode”,“followElement”:{“id”:“b5a09145-f7eb-af06-8b77-86f5c0d9”,“type”:“InitialNode”,“text”:“x
+als Ganzzahl =
+4”,“followElement”:{“id”:“ef818814-bbc2-1186-8de6-bb068824”,“type”:“InsertNode”,“followElement”:{“id”:“06125ef7-d7d1-5b70-223f-8d898cb8”,“type”:“InitialNode”,“text”:“y
+als Dezimalzahl =
+4.5”,“followElement”:{“id”:“80217435-1875-bce7-8a30-e4625044”,“type”:“InsertNode”,“followElement”:{“id”:“efc131e8-a0d4-f83e-2203-0d8d9d71”,“type”:“InitialNode”,“text”:“arr
+als Array =
+\[2,3,4,5\]”,“followElement”:{“id”:“47b7475d-603f-5f51-58e1-0376e08b”,“type”:“InsertNode”,“followElement”:{“id”:“c22eb68e-054c-e54b-48b5-82204728”,“type”:“InitialNode”,“text”:“laenge
+als Ganzzahl = Anzahl der Elemente im Vektor
+arr”,“followElement”:{“id”:“8dfdfce0-9285-95e5-0adf-40f73e9d”,“type”:“InsertNode”,“followElement”:{“id”:“00c5a2d4-1ba4-e2d6-fb5c-daf4f571”,“type”:“CountLoopNode”,“text”:“Zähle
+i von 0 bis 4 , Schrittweite
+1”,“followElement”:{“id”:“a0b21668-316f-e093-8f5d-fd255188”,“type”:“InsertNode”,“followElement”:{“id”:“f85c217a-a715-6e8a-edbd-7b2ee4bd”,“type”:“AssignNode”,“text”:“y
+=
+678”,“followElement”:{“id”:“7f03784c-d38e-13e0-19b2-f728a3ad”,“type”:“InsertNode”,“followElement”:{“id”:“9fe54b4d-b01d-2b50-2ee9-506ca127”,“type”:“InputNode”,“text”:“z
+als
+Ganzzahl”,“followElement”:{“id”:“0ef3a6ca-8f1a-7323-e767-885c7ee7”,“type”:“InsertNode”,“followElement”:{“id”:“44fcde40-3414-b382-f7b3-980ee9c9”,“type”:“InputNode”,“text”:“z
+als
+Dezimalzahl”,“followElement”:{“id”:“c80862ea-314e-a4f7-ac6e-93e46485”,“type”:“InsertNode”,“followElement”:{“id”:“be117bd3-c50e-9480-99c4-a322dcfa”,“type”:“InputNode”,“text”:“name
+als
+Zeichenkette”,“followElement”:{“id”:“2b440d4a-e6be-4ce2-4e51-1bce27e9”,“type”:“InsertNode”,“followElement”:{“id”:“4e4201f2-e330-2ef1-93e1-935c82e2”,“type”:“HeadLoopNode”,“text”:“Wiederhole
+solange x \<
+10”,“followElement”:{“id”:“f3dbc3a1-1677-83d4-57c2-a1caaad5”,“type”:“InsertNode”,“followElement”:{“id”:“6a672813-d558-6314-01b0-b4943b6b”,“type”:“CallNode”,“text”:“test(x,y)”,“followElement”:{“id”:“3e1c8aa1-7be6-d0f1-d0d8-a5d3cc9d”,“type”:“InsertNode”,“followElement”:null}}},“child”:{“id”:“315d92ce-7d95-12ea-aada-532873ec”,“type”:“InsertNode”,“followElement”:{“id”:“f9067169-8806-6e78-f450-d19ab2ff”,“type”:“AssignNode”,“text”:“z
+= z \*
+2”,“followElement”:{“id”:“ce9d2edc-24b4-a9fb-f3c6-7be8ed12”,“type”:“InsertNode”,“followElement”:{“id”:“ee3e9ddf-1e62-4e8d-48e6-4f94295e”,“type”:“AssignNode”,“text”:“x
+= x
++1”,“followElement”:{“id”:“743dcf94-688c-4f85-e7d8-a066ecff”,“type”:“InsertNode”,“followElement”:{“id”:“19d19d05-c7d3-821a-6b30-897f1fb8”,“type”:“OutputNode”,“text”:“"Ergebnis:",
+x,
+z”,“followElement”:{“id”:“e18b01ae-bbcb-337e-680e-9d6b163a”,“type”:“InsertNode”,“followElement”:null}}}}}}}}}}}}}}}}},“child”:{“id”:“b414ff67-74ec-b807-1c59-43e30fd1”,“type”:“InsertNode”,“followElement”:{“id”:“47ec7f72-799a-a2b4-a0d6-2705981f”,“type”:“AssignNode”,“text”:“ar\[i\]
+= ar\[i\] +
+2”,“followElement”:{“id”:“5ddc8e75-d7c1-9795-c1c0-9f0a7536”,“type”:“InsertNode”,“followElement”:null}}}}}}}}}}}}},“child”:{“id”:“ce654427-51fa-ecf6-67d8-940c61f3”,“type”:“InsertNode”,“followElement”:{“id”:“e9a8a75d-a758-54b0-0dbc-42837989”,“type”:“BranchNode”,“text”:“a
+\<
+b”,“followElement”:{“id”:“f5e2b51f-4ede-2b3a-79bc-c4035e61”,“type”:“InsertNode”,“followElement”:{“id”:“1b93b927-b68f-2599-83f3-181090f0”,“type”:“ReturnNode”,“text”:“erg”,“followElement”:{“id”:“af7f94b0-cf3b-2035-97d3-f8304dcb”,“type”:“InsertNode”,“followElement”:null}}},“trueChild”:{“id”:“c955a824-1d68-4c24-add2-3d2ae4fe”,“type”:“InsertNode”,“followElement”:{“id”:“06a5b88b-cb46-e9d3-a4cb-3ab37bae”,“type”:“InitialNode”,“text”:“erg
+als Dezimalzahl = a +
+b”,“followElement”:{“id”:“f29da5b7-e6df-226e-74d6-289c1da4”,“type”:“InsertNode”,“followElement”:null}}},“falseChild”:{“id”:“50f2e93a-2584-0195-6e27-8ccb10c0”,“type”:“InsertNode”,“followElement”:{“id”:“b9dfacc5-656a-80e2-c6ab-b1c26344”,“type”:“InitialNode”,“text”:“erg
+als Dezimalzahl = a -
+b”,“followElement”:{“id”:“02c708df-d469-9713-f0f8-36c3b0ac”,“type”:“InsertNode”,“followElement”:null}}}}}}}

@@ -107,3 +107,51 @@ Chapter 5, S. 41-45
 Chapter 6, S. 46-61
 
 [Link zum Buch](https://inventwithpython.com/inventwithpython_3rd.pdf)
+
+### IF-Anweisung
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ucsv_Nhhxmk?si=lBtkB3vpVjhgmNC2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b6KzYbM-Hvg?si=pLTeaDKV4GhUli4F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
+[Ein- und zweiseitige IF-Anweisungen](IF-Anweisungen.html)
+
+[Übung](Aufgaben-IF-Anweisungen.html)
+
+[Geschachtelte IF-Anweisung](geschachtelte-IF-Anweisung.html)
+
+[Übung](Aufgabe-geschachtelte-IF.html)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/075l6R42tkQ?si=_1ZhlHlfR6d-RYD5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
+[Verknüpfte Bedingungen](verknuepfte-Bedingungen.html)
+
+[Übung](Aufgaben-verknuepfte-Bedingungen.html)
+
+### FOR-Schleife (Zählerschleife)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pQh5Idw2sKM?si=JVMiuW9Qr6Yh5Foy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
+[FOR-Schleife](15_FOR-Schleife.html)
+
+[Übung](Aufgaben-FOR-Schleife.html)
+
+### WHILE-Schleife (Wiederholschleife)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sXLicTuJzB4?si=f3JOXu7AMXamwcfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
+[WHILE-Schleife](16_WHILE-Schleife.html)
+
+[Übung](16-Aufgaben-WHILE.html)
+
+### Vorbereitung auf die Klassenarbeit
+
+[Funktionen: Vertiefung](Funktionen-Vertiefung.html)
+
+[Schleifen: Vertiefung](17-Vertiefungsaufgaben-LSG.html)
+
+[Übung](Vorbereitung-KA2.html)

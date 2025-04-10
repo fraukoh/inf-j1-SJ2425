@@ -5,14 +5,16 @@ Sie sollen einen Reisezeit-Rechner programmieren, der für eine bestimmte
 Strecke und Geschwindigkeit die benötigte Reisezeit berechnet und
 ausgibt.
 
-1.  Erstellen Sie dafür: eine Funktionberechne_reisezeit(strecke,
-    geschwindigkeit), die: Als Parameter die zurückzulegende Strecke in
-    Kilometern und die Durchschnittsgeschwindigkeit in km/h
-    entgegennimmt Die Reisezeit in Stunden berechnet (Strecke geteilt
-    durch Geschwindigkeit) Die berechnete Zeit als Dezimalwert (z.B.
-    3.125 Stunden) zurückgibt
+1.  Erstellen Sie dafür: eine Funktion
+    `berechne_reisezeit(strecke, geschwindigkeit)`, die:  
+    Als Parameter die zurückzulegende Strecke in Kilometern und die
+    Durchschnittsgeschwindigkeit in km/h entgegennimmt  
+    Die Reisezeit in Stunden berechnet (Strecke geteilt durch
+    Geschwindigkeit)  
+    Die berechnete Zeit als Dezimalwert (z.B. 3.125 Stunden) zurückgibt
 
-2.  Testen Sie Ihre Funktionen mit folgenden Werten: Strecke: 250 km
+2.  Testen Sie Ihre Funktionen mit folgenden Werten:  
+    Strecke: 250 km  
     Geschwindigkeit: 80 km/h
 
 Ihr Programm soll zum Schluss eine benutzerfreundliche Meldung ausgeben:
@@ -42,15 +44,20 @@ Endpreis eines Artikels berechnet. Der Endpreis setzt sich zusammen aus
 dem ursprünglichen Artikelpreis, einem prozentualen Rabatt und den
 Versandkosten.
 
-1.  Erstellen Sie eine Funktion namens berechne_endpreis, die drei
-    Parameter annimmt: preis: Der ursprüngliche Artikelpreis in Euro
-    rabatt_prozent: Der Rabatt in Prozent (z.B. 15 für 15%)
-    versandkosten: Die Versandkosten in Euro
-2.  In der Funktion sollen Sie: Den Rabattbetrag in Euro berechnen
-    (Preis × Rabatt-Prozent / 100) Den Endpreis berechnen (Preis -
-    Rabattbetrag + Versandkosten) und zurückgeben
-3.  Testen Sie Ihre Funktion mit folgenden Werten: Artikelpreis: 79.99 €
-    Rabatt: 15% Versandkosten: 12.50 €
+1.  Erstellen Sie eine Funktion namens `berechne_endpreis`, die drei
+    Parameter annimmt:  
+    `preis`: Der ursprüngliche Artikelpreis in Euro  
+    `rabatt_prozent`: Der Rabatt in Prozent (z.B. 15 für 15%)  
+    `versandkosten`: Die Versandkosten in Euro  
+2.  In der Funktion sollen Sie:  
+    Den Rabattbetrag in Euro berechnen
+    (`Preis × Rabatt-Prozent / 100`)  
+    Den Endpreis berechnen (`Preis - Rabattbetrag + Versandkosten`) und
+    zurückgeben  
+3.  Testen Sie Ihre Funktion mit folgenden Werten:  
+    Artikelpreis: 79.99 €  
+    Rabatt: 15%  
+    Versandkosten: 12.50 €  
 4.  Geben Sie den berechneten Endpreis mit der Nachricht “Endpreis mit
     Versand:” aus.
 
@@ -79,12 +86,12 @@ Rechner soll den Gesamtwert einer Münzsammlung berechnen, die aus
 1-Cent-, 2-Cent-, 5-Cent-, 10-Cent-, 20-Cent- und 50-Cent-Münzen
 besteht.
 
-1.  Erstellen Sie eine Funktion berechne_gesamtwert, die: Sechs
-    Parameter entgegennimmt: die Anzahl der jeweiligen Münzen
-    (anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c,
-    anzahl_50c) Den Wert jeder Münzart in Cent berechnet Alle Werte
-    addiert, um den Gesamtwert in Cent zu ermitteln Den Gesamtwert in
-    Cent zurückgibt
+1.  Erstellen Sie eine Funktion `berechne_gesamtwert`, die:  
+    Sechs Parameter entgegennimmt: die Anzahl der jeweiligen Münzen
+    (`anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c`)  
+    Den Wert jeder Münzart in Cent berechnet  
+    Alle Werte addiert, um den Gesamtwert in Cent zu ermitteln  
+    Den Gesamtwert in Cent zurückgibt
 
 2.  Testen Sie Ihre Funktion mit folgenden Werten:  
     10 Stück 1-Cent-Münzen  
@@ -94,7 +101,7 @@ besteht.
     1 Stück 20-Cent-Münzen  
     2 Stück 50-Cent-Münzen
 
-3.  Geben Sie das Ergebnis in Euro aus (Cent-Wert / 100).
+3.  Geben Sie das Ergebnis in Euro aus (`Cent-Wert / 100`).
 
 ``` python
 def berechne_gesamtwert(anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c):
@@ -102,8 +109,8 @@ def berechne_gesamtwert(anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c,
     wert_2c = anzahl_2c * 2
     wert_5c = anzahl_5c * 5
     wert_10c = anzahl_10c * 10
-    wert_20c = anzahl_10c * 20
-    wert_50c = anzahl_10c * 50
+    wert_20c = anzahl_20c * 20
+    wert_50c = anzahl_50c * 50
 
     gesamtwert = wert_1c + wert_2c + wert_5c + wert_10c + wert_20c + wert_50c
     
@@ -114,7 +121,7 @@ gesamt_cent = berechne_gesamtwert(10, 5, 3, 2, 1, 2)
 print("Der Gesamtwert Ihrer Münzsammlung beträgt:", gesamt_cent/100 , "Euro")
 ```
 
-    Der Gesamtwert Ihrer Münzsammlung beträgt: 1.95 Euro
+    Der Gesamtwert Ihrer Münzsammlung beträgt: 1.75 Euro
 
 [Struktogramm](Aufgaben-Funktionen-mit-Rueckgabewert_files/figure-html/cell-9-1-image.png)
 
@@ -128,11 +135,11 @@ Ihr Programm soll beide Umrechnungsrichtungen ermöglichen.
 
 Erstellen Sie zwei Funktionen:
 
-1.  Die Funktion note_zu_punkte(note), die: Als Parameter eine
+1.  Die Funktion `note_zu_punkte(note)`, die: Als Parameter eine
     klassische Schulnote (z.B. 1,0 / 2,3 / 3,7) entgegennimmt Diese Note
     in das entsprechende Punktesystem der Oberstufe umrechnet Die
     berechneten Punkte zurückgibt
-2.  Die Funktion punkte_zu_note(punkte), die: Als Parameter eine
+2.  Die Funktion `punkte_zu_note(punkte)`, die: Als Parameter eine
     Punktzahl (z.B. 15 / 10 / 5) entgegennimmt Diese Punkte in eine
     klassische Schulnote umrechnet Die berechnete Note zurückgibt
 
