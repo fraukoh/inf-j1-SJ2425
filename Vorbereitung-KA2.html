@@ -69,6 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="Vorbereitung-KA2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="fullcontent">
@@ -105,11 +106,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>):</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Nummer"</span>, i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="lösung" class="level2">
-<h2 class="anchored" data-anchor-id="lösung">Lösung</h2>
 <details>
 <summary>
-Klicke hier um die Lösungen anzuzeigen
+Lösung
 </summary>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -118,7 +117,6 @@ Klicke hier um die Lösungen anzuzeigen
 </figure>
 </div>
 </details>
-</section>
 <section id="aufgabe-2" class="level1">
 <h1>Aufgabe 2:</h1>
 <p>Übersetzen Sie folgendes Struktogramm in python.</p>
@@ -128,9 +126,9 @@ Klicke hier um die Lösungen anzuzeigen
 <figcaption>grafik.png</figcaption>
 </figure>
 </div>
-<div id="ecde238d-964f-400f-b889-bdad571c1245" class="cell" data-execution_count="4">
+<div id="ecde238d-964f-400f-b889-bdad571c1245" class="cell" data-output-summary="Erwartete Ausgabe" data-output-fold="true" data-execution_count="4">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lösung</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test(a,b):</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    erg <span class="op">=</span> (a<span class="op">+</span>b)<span class="op">/</span><span class="dv">2</span></span>
@@ -157,7 +155,7 @@ Zweite Zahl: 4</code></pre>
 </blockquote>
 <div id="495c1e2f-c560-435f-8b37-26d2b543f9a5" class="cell" data-scrolled="true" data-execution_count="1">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ihr Name:"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>gewicht <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Ihr Gewicht in kg:"</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>koerpergroesse <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Ihre Körpergröße in m:"</span>))</span>
@@ -187,7 +185,7 @@ Ihre Körpergröße in m: 1.75</code></pre>
 </div>
 <div id="9bcf170f-c4bd-4a70-ac97-dd71c4b8d952" class="cell" data-execution_count="5">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lösung</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechne_betrag(preis, menge, rabatt_prozent):</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    betrag <span class="op">=</span> preis <span class="op">*</span> menge <span class="op">*</span> (<span class="dv">100</span><span class="op">-</span>rabatt_prozent)<span class="op">/</span><span class="dv">100</span></span>
@@ -226,7 +224,7 @@ Zu zahlender Betrag: 196.0 €</code></pre>
 </ul>
 <div id="99ee23a1-79a5-438a-b128-938d4ed8d8cb" class="cell" data-execution_count="15">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>seite1 <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Seitenlänge 1:"</span>))</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>seite2 <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Seitenlänge 2:"</span>))</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>seite3 <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Seitenlänge 3:"</span>))</span>
@@ -249,7 +247,7 @@ Seitenlänge 3: 5</code></pre>
 <p>Erweitern Sie das Programm um eine Prüfung, die sicherstellt, dass nur positive Werte für die Seitenlängen eingegeben werden können.</p>
 <div id="48b41bec-923f-46f2-b180-230aff2928d5" class="cell" data-execution_count="19">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>seite1 <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Seitenlänge 1:"</span>))</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>seite2 <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Seitenlänge 2:"</span>))</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>seite3 <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Seitenlänge 3:"</span>))</span>
@@ -281,7 +279,7 @@ Seitenlänge 3: 5</code></pre>
 <code>Ich wiederhole zum 10. mal</code></p>
 <div id="4b453ce1-2940-4ec4-8cfa-c4e6f1b7ecdd" class="cell" data-execution_count="13">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Lösung</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>):</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ich wiederhole zum"</span>, x, <span class="st">". mal"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
