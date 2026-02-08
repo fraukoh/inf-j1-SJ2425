@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Referentielle Integrität – Arbeitsblatt</title>
+  <style>
+    :root {
+      --bg: #f5f4f0;
+      --card: #fff;
+      --ink: #1a1a1a;
+      --accent: #1a5276;
+      --accent-light: #e8eef2;
+      --pk: #0d4d2b;
+      --fk: #6b2d5c;
+      --wrong: #922;
+      --wrong-bg: #ffebee;
+      --right: #1b5e20;
+      --right-bg: #e8f5e9;
+      --border: #b0bec5;
+      --shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    h1 { font-size: 1.7rem; color: var(--accent); margin-top: 0; }
+    h2 { font-size: 1.25rem; margin-top: 2rem; color: var(--accent); }
+    h3 { font-size: 1.05rem; margin-top: 1.2rem; }
+    .card {
+      background: var(--card);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 1.2rem 1.4rem;
+      margin: 1rem 0;
+      border: 1px solid var(--border);
+    }
+    .definition { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 0.8rem 1rem; margin: 0.8rem 0; }
+    .rule { font-weight: 700; color: var(--accent); }
+    code, .attr { font-family: 'Consolas', monospace; background: #eceff1; padding: 0.08em 0.35em; border-radius: 4px; font-size: 0.92em; }
+    .pk { color: var(--pk); font-weight: 600; }
+    .fk { color: var(--fk); font-weight: 600; }
+    .feedback { padding: 0.8rem 1rem; border-radius: 8px; margin-top: 0.8rem; font-weight: 500; }
+    .feedback.correct { background: var(--right-bg); color: var(--right); border: 1px solid var(--right); }
+    .feedback.incorrect { background: var(--wrong-bg); color: var(--wrong); border: 1px solid var(--wrong); }
+    .feedback.hint { background: #fff8e1; color: #e65100; border: 1px solid #ffb74d; }
+    button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    button:hover { filter: brightness(1.08); }
+    .mc-option { display: block; margin: 0.4rem 0; padding: 0.5rem 0.8rem; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; }
+    .mc-option:hover { border-color: var(--accent); background: var(--accent-light); }
+    .mc-option.selected { border-color: var(--accent); background: var(--accent-light); }
+    .mc-option.correct { border-color: var(--right); background: var(--right-bg); }
+    .mc-option.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
+    .aufgabe { counter-increment: aufgabe; }
+    .aufgabe h3::before { content: "Übung " counter(aufgabe) ": "; }
+    section { counter-reset: aufgabe; }
+    .diagram { overflow-x: auto; margin: 1rem 0; }
+    .diagram svg { display: block; margin: 0 auto; }
+    .fig-caption { font-size: 0.9rem; color: #555; margin-top: 0.5rem; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <h1>Referentielle Integrität</h1>
+  <p class="card">
+    In diesem Arbeitsblatt lernst du, was <b>Primärschlüssel</b> und <b>Fremdschlüssel</b> sind und warum die Regel „Zu jedem Fremdschlüssel muss es einen gültigen Primärschlüssel geben“ wichtig ist. Du arbeitest mit einem einfachen Beispiel: einer <b>Bibliotheks-Datenbank</b>.
+  </p>
+
+  <!-- ========== BEISPIEL-SCHEMA ========== -->
+  <section id="schema">
+    <h2>1. Struktur der Beispieldatenbank</h2>
+    <p>Stell dir eine kleine Bibliothek vor. Es gibt <b>Autoren</b>, <b>Bücher</b> (jedes Buch hat einen Autor) und <b>Leser</b>, die Bücher <b>ausleihen</b>. Die Datenbank besteht aus vier Tabellen:</p>
+
+    <div class="diagram card">
+      <img src="ERM-Buecherei.png" alt="ERM Bücherei – Autoren, Buecher, Leser, Ausleihen mit PK und FK" style="max-width:100%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+      <p class="fig-caption">Abb. 1: ERM der Bibliotheks-Datenbank (Tabellen Autoren, Buecher, Leser, Ausleihen; PK = Primärschlüssel, FK = Fremdschlüssel).</p>
+    </div>
+
+    <div class="card definition">
+      <h3>Kurz erklärt</h3>
+      <p>Laut ERM oben:</p>
+      <ul>
+        <li><b>Autoren</b>: idAutor (PK), name</li>
+        <li><b>Buecher</b>: idBuch (PK), titel, <b>FK_idAutor</b> → verweist auf <code>Autoren.idAutor</code></li>
+        <li><b>Leser</b>: idLeser (PK), name</li>
+        <li><b>Ausleihen</b>: idAusleihe (PK), rueckgabefrist, <b>FK_idBuch</b> → <code>Buecher.idBuch</code>, <b>FK_idLeser</b> → <code>Leser.idLeser</code></li>
+      </ul>
+      <p>Eine Tabelle, die einen <b>Fremdschlüssel</b> enthält, heißt <b>Kindtabelle</b>; die Tabelle, auf deren <b>Primärschlüssel</b> der Fremdschlüssel verweist, heißt <b>Elterntabelle</b>. Beispiel: <code>Buecher</code> ist Kind von <code>Autoren</code>, <code>Ausleihen</code> ist Kind von <code>Buecher</code> und <code>Leser</code>.</p>
+    </div>
+  </section>
+
+  <!-- ========== DEFINITIONEN ========== -->
+  <section id="definitionen">
+    <h2>2. Definitionen</h2>
+    <div class="card definition">
+      <h3>Primärschlüssel</h3>
+      Ein Attribut (oder mehrere), das jeden Datensatz <b>eindeutig</b> kennzeichnet. Jede Tabelle hat einen Primärschlüssel (z.B. <code class="pk">autoren.idAutor</code>, <code class="pk">buecher.idBuch</code>).
+    </div>
+    <div class="card definition">
+      <h3>Fremdschlüssel</h3>
+      Ein Attribut, das auf einen <b>Primärschlüssel</b> (meist in einer anderen Tabelle) verweist. Beispiel: <code class="fk">buecher.FK_idAutor</code> verweist auf <code>autoren.idAutor</code>.
+    </div>
+    <div class="card definition">
+      <h3>Referentielle Integrität</h3>
+      <p class="rule">Zu jedem Fremdschlüsselwert muss es einen passenden Primärschlüsselwert geben.</p>
+      Wenn jemand z.B. in <code>ausleihen</code> einen Eintrag mit <code>FK_idBuch = 999</code> speichert, muss in der Tabelle <code>buecher</code> tatsächlich ein Buch mit <code>idBuch = 999</code> existieren. Sonst sind die Daten <b>inkonsistent</b>.
+    </div>
+  </section>
+
+  <!-- ========== WAS GEHT SCHIEF ========== -->
+  <section id="anomalien">
+    <h2>3. Wann wird die Datenbank inkonsistent?</h2>
+    <p>Die referentielle Integrität wird verletzt, wenn Fremdschlüssel „ins Leere“ zeigen oder umgekehrt Primärschlüssel gelöscht werden, auf die noch verwiesen wird.</p>
+
+    <div class="card">
+      <h3>Löschanomalie</h3>
+      Ein Datensatz in der <b>Elterntabelle</b> wird gelöscht, obwohl in einer Kindtabelle noch Fremdschlüssel auf diesen Primärschlüssel verweisen.<br>
+      <small>Beispiel: Autor mit idAutor = 5 wird gelöscht, obwohl in <code>buecher</code> noch Bücher mit FK_idAutor = 5 stehen.</small>
+    </div>
+    <div class="card">
+      <h3>Einfügeanomalie</h3>
+      In der <b>Kindtabelle</b> wird ein Datensatz mit einem Fremdschlüssel eingefügt, zu dem es in der Elterntabelle <b>keinen</b> Primärschlüssel gibt.<br>
+      <small>Beispiel: Neues Buch mit FK_idAutor = 99, obwohl es keinen Autor mit idAutor = 99 gibt.</small>
+    </div>
+    <div class="card">
+      <h3>Änderungsanomalie</h3>
+      Ein Fremdschlüssel wird auf einen Wert geändert, zu dem es in der Elterntabelle keinen Primärschlüssel gibt – oder ein Primärschlüssel wird geändert, sodass bestehende Fremdschlüssel nicht mehr passen.
+    </div>
+  </section>
+
+  <!-- ========== ÜBUNGEN ========== -->
+  <section id="uebungen">
+    <h2>4. Übungen</h2>
+
+    <!-- Übung 1: Elterntabelle / Kindtabelle -->
+    <div class="card aufgabe">
+      <h3>Elterntabelle und Kindtabelle</h3>
+      <p>Im Diagramm oben: Welche Tabelle ist <b>Elterntabelle</b> und welche <b>Kindtabelle</b> in Bezug auf die Beziehung zwischen <code>buecher</code> und <code>ausleihen</code>?</p>
+      <div id="mc1-options" role="group">
+        <label class="mc-option" data-value="buecher-elt"><input type="radio" name="mc1" value="buecher-elt" hidden> buecher = Elterntabelle, ausleihen = Kindtabelle</label>
+        <label class="mc-option" data-value="ausleihen-elt"><input type="radio" name="mc1" value="ausleihen-elt" hidden> ausleihen = Elterntabelle, buecher = Kindtabelle</label>
+      </div>
+      <p id="mc1-feedback" class="feedback" style="display:none;"></p>
+      <button type="button" id="mc1-check">Prüfen</button>
+    </div>
+
+    <!-- Übung 2: Was passiert wenn ... -->
+    <div class="card aufgabe">
+      <h3>Folge einer Löschung</h3>
+      <p>Jemand löscht den Autor mit <code>idAutor = 3</code> aus der Tabelle <code>autoren</code>. In der Tabelle <code>buecher</code> gibt es noch mehrere Bücher mit <code>FK_idAutor = 3</code>. Was trifft zu?</p>
+      <div id="mc2-options" role="group">
+        <label class="mc-option" data-value="ok"><input type="radio" name="mc2" value="ok" hidden> Das ist unproblematisch, die Bücher bleiben ja in buecher.</label>
+        <label class="mc-option" data-value="inkonsistent"><input type="radio" name="mc2" value="inkonsistent" hidden> Die Datenbank wird inkonsistent (Fremdschlüssel zeigen auf nicht mehr existierenden Primärschlüssel).</label>
+        <label class="mc-option" data-value="verschwinden"><input type="radio" name="mc2" value="verschwinden" hidden> Die betroffenen Bücher werden automatisch mitgelöscht.</label>
+      </div>
+      <p id="mc2-feedback" class="feedback" style="display:none;"></p>
+      <button type="button" id="mc2-check">Prüfen</button>
+    </div>
+
+    <!-- Übung 3: Reihenfolge INSERT -->
+    <div class="card aufgabe">
+      <h3>Reihenfolge beim Einfügen</h3>
+      <p>Du willst einen <b>neuen Autor</b>, ein <b>neues Buch</b> (diesem Autor zugeordnet) und eine <b>neue Ausleihe</b> (dieses Buch, ein bestehender Leser) anlegen. In welcher Reihenfolge musst du die INSERT-Befehle ausführen?</p>
+      <p>Ordne die Schritte von 1 (zuerst) bis 3 (zuletzt) zu.</p>
+      <div id="order-area" class="card" style="background:#fafafa;">
+        <p><label><input type="radio" name="order" value="a"> 1. Autor einfügen &nbsp; 2. Buch einfügen &nbsp; 3. Ausleihe einfügen</label></p>
+        <p><label><input type="radio" name="order" value="b"> 1. Buch einfügen &nbsp; 2. Autor einfügen &nbsp; 3. Ausleihe einfügen</label></p>
+        <p><label><input type="radio" name="order" value="c"> 1. Ausleihe einfügen &nbsp; 2. Buch einfügen &nbsp; 3. Autor einfügen</label></p>
+      </div>
+      <p id="order-feedback" class="feedback" style="display:none;"></p>
+      <button type="button" id="order-check">Prüfen</button>
+    </div>
+
+    <!-- Übung 4: Anomalie zuordnen -->
+    <div class="card aufgabe">
+      <h3>Anomalie erkennen</h3>
+      <p>In der Tabelle <code>ausleihen</code> wird ein neuer Eintrag eingefügt mit <code>FK_idBuch = 77</code> und <code>FK_idLeser = 2</code>. In <code>buecher</code> gibt es <b>kein</b> Buch mit <code>idBuch = 77</code>; in <code>leser</code> gibt es den Leser mit <code>idLeser = 2</code>. Welche Anomalie liegt vor?</p>
+      <div id="mc3-options" role="group">
+        <label class="mc-option" data-value="loesch"><input type="radio" name="mc3" value="loesch" hidden> Löschanomalie</label>
+        <label class="mc-option" data-value="einfueg"><input type="radio" name="mc3" value="einfueg" hidden> Einfügeanomalie</label>
+        <label class="mc-option" data-value="aender"><input type="radio" name="mc3" value="aender" hidden> Änderungsanomalie</label>
+      </div>
+      <p id="mc3-feedback" class="feedback" style="display:none;"></p>
+      <button type="button" id="mc3-check">Prüfen</button>
+    </div>
+
+    <!-- Übung 5: Kurz formulieren -->
+    <div class="card aufgabe">
+      <h3>Grundregel in eigenen Worten</h3>
+      <p>Formuliere die Grundregel der referentiellen Integrität in einem kurzen Satz (Stichworte reichen).</p>
+      <textarea id="text-answer" rows="2" style="width:100%; padding:0.5rem; border:2px solid var(--border); border-radius:8px; font-family:inherit;" placeholder="z.B.: Fremdschlüssel müssen …"></textarea>
+      <p id="text-feedback" class="feedback" style="display:none;"></p>
+      <button type="button" id="text-check">Prüfen</button>
+    </div>
+  </section>
+
+  <footer class="card" style="margin-top:2rem; font-size:0.9rem; color:#666;">
+    <p>Arbeitsblatt Referentielle Integrität – Niveau und Begriffe angelehnt an Erklärungen zu Datenkonsistenz und referentieller Integrität (z.B. hauptquartier.eu). Schema und Aufgaben eigenständig erstellt.</p>
+  </footer>
+
+  <script>
+    // ---- Übung 1: Elterntabelle / Kindtabelle ----
+    (function() {
+      const opts = document.querySelectorAll('#mc1-options .mc-option');
+      const fb = document.getElementById('mc1-feedback');
+      const btn = document.getElementById('mc1-check');
+      const correct = 'buecher-elt';
+
+      opts.forEach(o => {
+        o.addEventListener('click', () => {
+          opts.forEach(x => x.classList.remove('selected', 'correct', 'wrong'));
+          o.classList.add('selected');
+          o.querySelector('input').checked = true;
+        });
+      });
+
+      btn.addEventListener('click', () => {
+        const sel = document.querySelector('input[name="mc1"]:checked');
+        fb.style.display = 'block';
+        opts.forEach(o => o.classList.remove('correct', 'wrong'));
+        if (!sel) {
+          fb.className = 'feedback hint';
+          fb.textContent = 'Bitte wähle eine Antwort.';
+          return;
+        }
+        const ok = sel.value === correct;
+        fb.className = 'feedback ' + (ok ? 'correct' : 'incorrect');
+        if (ok) {
+          fb.textContent = '✓ Richtig! ausleihen enthält den Fremdschlüssel FK_idBuch, der auf buecher.idBuch verweist. Also ist buecher die Elterntabelle und ausleihen die Kindtabelle.';
+          document.querySelector('#mc1-options .mc-option[data-value="buecher-elt"]').classList.add('correct');
+        } else {
+          fb.textContent = 'Falsch. Die Tabelle mit dem Fremdschlüssel ist die Kindtabelle (ausleihen hat FK_idBuch). Die Tabelle, auf die verwiesen wird, ist die Elterntabelle (buecher).';
+          document.querySelector('#mc1-options .mc-option[data-value="' + sel.value + '"]').classList.add('wrong');
+          document.querySelector('#mc1-options .mc-option[data-value="buecher-elt"]').classList.add('correct');
+        }
+      });
+    })();
+
+    // ---- Übung 2: Folge Löschung ----
+    (function() {
+      const opts = document.querySelectorAll('#mc2-options .mc-option');
+      const fb = document.getElementById('mc2-feedback');
+      const btn = document.getElementById('mc2-check');
+      const correct = 'inkonsistent';
+
+      opts.forEach(o => {
+        o.addEventListener('click', () => {
+          opts.forEach(x => x.classList.remove('selected', 'correct', 'wrong'));
+          o.classList.add('selected');
+          o.querySelector('input').checked = true;
+        });
+      });
+
+      btn.addEventListener('click', () => {
+        const sel = document.querySelector('input[name="mc2"]:checked');
+        fb.style.display = 'block';
+        opts.forEach(o => o.classList.remove('correct', 'wrong'));
+        if (!sel) {
+          fb.className = 'feedback hint';
+          fb.textContent = 'Bitte wähle eine Antwort.';
+          return;
+        }
+        const ok = sel.value === correct;
+        fb.className = 'feedback ' + (ok ? 'correct' : 'incorrect');
+        if (ok) {
+          fb.textContent = '✓ Richtig! Die Bücher mit FK_idAutor = 3 verweisen nun auf einen nicht mehr existierenden Autor – die referentielle Integrität ist verletzt (Löschanomalie).';
+          document.querySelector('#mc2-options .mc-option[data-value="inkonsistent"]').classList.add('correct');
+        } else {
+          fb.textContent = 'Falsch. Nach dem Löschen des Autors existiert idAutor = 3 nicht mehr; die Fremdschlüssel in buecher zeigen „ins Leere“. Die DB ist inkonsistent (ohne DB-Features werden die Bücher nicht automatisch gelöscht).';
+          document.querySelector('#mc2-options .mc-option[data-value="' + sel.value + '"]').classList.add('wrong');
+          document.querySelector('#mc2-options .mc-option[data-value="inkonsistent"]').classList.add('correct');
+        }
+      });
+    })();
+
+    // ---- Übung 3: Reihenfolge ----
+    (function() {
+      const fb = document.getElementById('order-feedback');
+      const btn = document.getElementById('order-check');
+      const correct = 'a';
+
+      btn.addEventListener('click', () => {
+        const sel = document.querySelector('input[name="order"]:checked');
+        fb.style.display = 'block';
+        if (!sel) {
+          fb.className = 'feedback hint';
+          fb.textContent = 'Bitte wähle eine Reihenfolge.';
+          return;
+        }
+        const ok = sel.value === correct;
+        fb.className = 'feedback ' + (ok ? 'correct' : 'incorrect');
+        if (ok) {
+          fb.textContent = '✓ Richtig! Zuerst muss der Autor da sein (Primärschlüssel), dann kann ein Buch mit FK_idAutor eingefügt werden, dann die Ausleihe mit FK_idBuch.';
+        } else {
+          fb.textContent = 'Falsch. Merke: Elterntabellen müssen vor den Kindtabellen befüllt werden. Reihenfolge: 1. Autor, 2. Buch (braucht Autor), 3. Ausleihe (braucht Buch und Leser).';
+        }
+      });
+    })();
+
+    // ---- Übung 4: Anomalie ----
+    (function() {
+      const opts = document.querySelectorAll('#mc3-options .mc-option');
+      const fb = document.getElementById('mc3-feedback');
+      const btn = document.getElementById('mc3-check');
+      const correct = 'einfueg';
+
+      opts.forEach(o => {
+        o.addEventListener('click', () => {
+          opts.forEach(x => x.classList.remove('selected', 'correct', 'wrong'));
+          o.classList.add('selected');
+          o.querySelector('input').checked = true;
+        });
+      });
+
+      btn.addEventListener('click', () => {
+        const sel = document.querySelector('input[name="mc3"]:checked');
+        fb.style.display = 'block';
+        opts.forEach(o => o.classList.remove('correct', 'wrong'));
+        if (!sel) {
+          fb.className = 'feedback hint';
+          fb.textContent = 'Bitte wähle eine Antwort.';
+          return;
+        }
+        const ok = sel.value === correct;
+        fb.className = 'feedback ' + (ok ? 'correct' : 'incorrect');
+        if (ok) {
+          fb.textContent = '✓ Richtig! Es wird etwas eingefügt (in ausleihen), und der Fremdschlüssel FK_idBuch = 77 verweist auf ein nicht existierendes Buch – das ist eine Einfügeanomalie.';
+          document.querySelector('#mc3-options .mc-option[data-value="einfueg"]').classList.add('correct');
+        } else {
+          fb.textContent = 'Falsch. Hier wird ein neuer Datensatz eingefügt, dessen Fremdschlüssel (FK_idBuch = 77) auf keinen gültigen Primärschlüssel zeigt – das ist die Einfügeanomalie.';
+          document.querySelector('#mc3-options .mc-option[data-value="' + sel.value + '"]').classList.add('wrong');
+          document.querySelector('#mc3-options .mc-option[data-value="einfueg"]').classList.add('correct');
+        }
+      });
+    })();
+
+    // ---- Übung 5: Kurztext ----
+    (function() {
+      const ta = document.getElementById('text-answer');
+      const fb = document.getElementById('text-feedback');
+      const btn = document.getElementById('text-check');
+      const keywords = ['fremdschlüssel', 'primärschlüssel', 'existier', 'verweis', 'gültig'];
+
+      btn.addEventListener('click', () => {
+        const text = (ta.value || '').trim().toLowerCase();
+        fb.style.display = 'block';
+        if (text.length < 8) {
+          fb.className = 'feedback hint';
+          fb.textContent = 'Bitte formuliere mindestens einen kurzen Satz.';
+          return;
+        }
+        const hits = keywords.filter(k => text.includes(k));
+        if (hits.length >= 2) {
+          fb.className = 'feedback correct';
+          fb.textContent = '✓ Passt! Die Grundregel: Fremdschlüssel müssen immer auf existierende (gültige) Primärschlüssel verweisen.';
+        } else {
+          fb.className = 'feedback hint';
+          fb.textContent = 'Tipp: In deiner Formulierung sollten z.B. vorkommen: Fremdschlüssel, Primärschlüssel und etwas wie „existieren“ oder „verweisen“.';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
